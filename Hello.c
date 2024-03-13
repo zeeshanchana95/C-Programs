@@ -1,21 +1,18 @@
-//Program Structure:
+//Comments:
+  //lines that are not part of program
+  //comments are of two types
+    //1. single line:
+      // use for commenting single line
+      //use double forward slash //
+    //2. multiple line:
+      //use for commenting multiple lines
+      //use /* */ 
 
 
-#include<stdio.h> //pre-processor directive
-//always need to add above line 
 
-//"main" is the main fuction, int is the return value type that main function will return
+#include<stdio.h> 
 
-//function basically helps us to perform some task
-
-//code inside "{}" is be executed when the function main is called
-
-//every C program's starting point will be "main" function
-
-// ; semicolon indicate the end of instruction
-
-//C is a case-sensitive languages meaning "main" and "Main" are different things
-
+//this code displays how to print something to the scren  
 int main() {
 
   printf("Hello World!");
