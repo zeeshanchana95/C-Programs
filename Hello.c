@@ -1,48 +1,28 @@
-//Variables:
-    //variable is the name of a memory location which stores some data.
-
-#include<stdio.h>
+//
+    //data type tells which type of data you store in the memory
+    //each data type specify the type of value to be stored and the memory size it will take or occupy in memory
+    //there are many data types
+        //  DATA TYPE (SIZE IN BYTES)
+        // Char or signed char (1)
+        // Unsigned char (1)
+        // int or signed int (2)
+        // Unsigned int (2)
+        // Short int or Unsigned short int (2)
+        // Signed short int (2)
+        // Long int or Signed long int (4)
+        // Unsigned long int (4)
+        // float (4)
+        // double (8)
+        // Long double (8)
+    //C LANGUAGE doesn't support boolean or string data type because I was came very early time, then c++, java, javascript, e#include<stdio.h>
 
 int main() {
-    //declare variable named age 
-    //(Syntax: datatype nameOfVariable;)
-    int age;
 
-    //initialize variable named age
-    //(Syntax: nameOfVariable = value;)
-    age = 24;
+    //le'ts have a look at the most common data types
 
-    //declare and initialize variable named color at the same time
-    //(Syntax: datatype nameOfVariable = value;)
-    string color = "white";
-
-    //declaring variable with other data types
-    int number = 25;
-    char star = '*';
-    float height = 1.75;
-
-    //update existing variable value
-    age = 24;
-   
-    //Rules for Writing Variable Names:
-        // a. Variables are case sensitive
-            int a = 30;
-            int A = 40;
-
-        // b. 1st character is alphabet or '_'
-            int _age = 22;
-        
-        // c. no comma/blank space
-            int final_price = 100;
-        
-        // d. No other symbol other than
-            // int final-price = 23; //error
-
-
-    //Variable names should be meaningful and unique within the program
-    int final_price = 100;
-
-
+    int age = 22; //for storing whole numbers
+    float pi = 3.142; //for storing values with decimal point
+    char hashtag = '#'; //for storing special characters
 
     return 0;
 }
