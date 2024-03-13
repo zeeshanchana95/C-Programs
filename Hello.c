@@ -1,15 +1,45 @@
-  //LETS have a look at constants
-    //constants are values that don't change (fixed)
-        // we have 
-            //integer constants: 1,2,3,0,-1,-2
+//Keywords:
+//these are reserved words that have special meaning to the compiler and the meaning of these words can't be changed
+//32 keywords in c 
+//can't be used for variable names
+  // auto
+  // break
+  // case
+  // char
+  // continue
+  // do
+  // default
+  // const
+  // double
+  // else
+  // enum
+  // extern
+  // for
+  // if
+  // goto
+  // float
+  // int
+  // long
+  // register
+  // return
+  // signed
+  // static
+  // sizeof
+  // short
+  // struct
+  // switch
+  // typedef
+  // union
+  // void
+  // while
+  // volatile
+  // unsigned
 
-            //real constants: 1.0, 2.0, 3.14, -2.4
-            
-            //character constants (need to be enclosed in single quotes): 'a', 'b', 'A', '#', '&'
 
 #include<stdio.h>
 
 int main() {
 
+    
     return 0;
 }
