@@ -344,3 +344,59 @@ int main() {
   //a computer program that translates C code into machine code (0's and 1's)
   // C Program -> C Compiler -> Output File (a.exe or a.out)
   // Hello.cpp -> gcc Hello.c -> a.exe 
+
+
+
+
+
+// Practice Qs 1
+// 1 . Write a program to calculate area of a square.
+// (side is given)
+
+#include<stdio.h>
+int main() {
+  
+  // int side = 3;
+  // int areaOfSquare = side * side;
+  // printf("Area of square %d", areaOfSquare);
+
+  // int side;
+  // printf("Enter side: ");
+  // scanf("%d", &side);
+  // printf("Are of square is: %d", side * side);
+
+  float side;
+  printf("Enter side: ");
+  scanf("%f", &side);
+  printf("Area of square is: %f", side*side);
+
+  return 0;
+}
+
+
+
+
+// Practice Qs 2
+// Write a program to calculate area of a circle.
+// (side is given)
+
+#include<stdio.h>
+int main() {
+
+  float radius;
+  printf("Enter radius: ");
+  scanf("%f", &radius);
+  printf("Area of circle is: %f", 3.142*radius*radius);
+
+  return 0;
+}
+
+// HOMEWORK SET
+// a. Write a program to calculate perimeter of rectangle.
+// Take sides, a & b, from the user.
+// b. Take a number(n) from user & output its cube(n*n*n).
+// c. Write comments for programs a & b.
+// d. temperature conversion from fahrenheit to celsius or vice versa.
+// e. calculate interest using given formula
+// f. calculate compound interest.
+// g. calculate area of triangle, rectangle, etc.

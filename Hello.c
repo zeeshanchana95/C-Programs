@@ -1,26 +1,26 @@
-//Basic Sum Program:
+// Practice Qs 2
+// Write a program to calculate area of a circle.
+// (side is given)
 
-#include<stdio.h> 
+#include<stdio.h>
 int main() {
 
-  int a,b;
-  printf("Enter a: ");
-  scanf("%d",&a);
-
-  printf("Enter b: ");
-  scanf("%d",&b);
-
-  // int sum = a + b;
-  printf("Addition of %d and %d is: %d\n", a, b, a+b);
-  printf("Subtraction of %d and %d is: %d\n", a, b, a-b);
-  printf("Multiplication of %d and %d is: %d\n", a, b, a*b);
-  printf("Division of %d and %d is: %d\n", a, b, a/b);
+  float radius;
+  printf("Enter radius: ");
+  scanf("%f", &radius);
+  printf("Area of circle is: %f", 3.142*radius*radius);
 
   return 0;
 }
 
+// HOMEWORK SET
+// a. Write a program to calculate perimeter of rectangle.
+// Take sides, a & b, from the user.
+// b. Take a number(n) from user & output its cube(n*n*n).
+// c. Write comments for programs a & b.
+// d. temperature conversion from fahrenheit to celsius or vice versa.
+// e. calculate interest using given formula
+// f. calculate compound interest.
+// g. calculate area of triangle, rectangle, etc.
 
-//Compilation:
-  //a computer program that translates C code into machine code (0's and 1's)
-  // C Program -> C Compiler -> Output File (a.exe or a.out)
-  // Hello.cpp -> gcc Hello.c -> a.exe 
+
