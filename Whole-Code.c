@@ -682,3 +682,222 @@ int main() {
   return 0;
 
 }
+
+
+
+
+// Control Instructions
+  // Used to determine flow of program or change the normal flow of executing instructions
+  //are of 4 types
+  // a. Sequence Control
+    //- run sequence wise - one by one
+
+  // b. Decision Control
+    //- if-else instructions which decide which block of statements to execute based upon the condition
+  
+  // c. Loop Control
+    //- learn the use of different loops for task that need to be performed repetitively
+  
+  // d. Case Control
+    //- perform certain actions based upon cases defined, use switch statement with different cases
+
+// Operators:
+  //a. Arithmetic Operators
+    // - used to perform arithmetic operations using operators like +, -, * , /, %
+
+  //b. Relational Operators
+    // - used to the relation between two operands like >, <, >=, <=, ==, !=
+
+  //c. Logical Operators
+    // - used to perform logical operations using logical operators like &&, ||
+
+  //d. Bitwise Operators
+    // - used to perform operations on individual bits
+
+  //e. Assign Operators
+    // - use to perform assignment operations like +=, -+, *=, /=, %=
+
+  //f. Ternary Operator ?:
+    // - also called conditional operator, normally used to assign value of depending upon condition
+
+
+#include <stdio.h>
+
+int main() {
+
+  
+    
+  return 0;
+}
+
+
+
+
+// Control Instructions
+  // Used to determine flow of program or change the normal flow of executing instructions
+  //are of 4 types
+  // a. Sequence Control
+    //- run sequence wise - one by one
+
+  // b. Decision Control
+    //- if-else instructions which decide which block of statements to execute based upon the condition
+  
+  // c. Loop Control
+    //- learn the use of different loops for task that need to be performed repetitively
+  
+  // d. Case Control
+    //- perform certain actions based upon cases defined, use switch statement with different cases
+
+// Operators:
+  //a. Arithmetic Operators
+    // - used to perform arithmetic operations using operators like +, -, * , /, %
+
+  //b. Relational Operators
+    // - used to the relation between two operands like >, <, >=, <=, ==, !=
+
+  //c. Logical Operators
+    // - used to perform logical operations using logical operators like &&, ||
+
+  //d. Bitwise Operators
+    // - used to perform operations on individual bits
+
+  //e. Assign Operators
+    // - use to perform assignment operations like +=, -+, *=, /=, %=
+
+  //f. Ternary Operator ?:
+    // - also called conditional operator, normally used to assign value of depending upon condition
+
+
+
+//RELATIONAL OPERATORS:
+  // <, >,, less than, greater than 
+  //<=, >=, less that or equal to, greater than or equal to
+  //==, != for equality or inequality
+
+  // NOTE:  if return values is 2,3,4,5,6,7, -1, -5 means true otherwise false for 0
+
+
+// LOGICAL OPERATORS:
+  // when more than one condition need to be checked at the same time, we use logical operators
+
+  // we have different local operators
+  // && means AND -> return true (1) when all both conditions are true
+  // || means OR -> return true (1) when atleast one condition is true
+  // ! means NOT -> used to reverse the result of condition or reverse the returned value of condition like true from false and vice versa
+
+
+  //OPERATOR PRECEDENCE:
+    // Priority            Operator
+    //   1                      !
+    //   2                    *,/,%
+    //   3                     +,-
+    //   4                 <, <=, >, >=
+    //   5                    ==, !=
+    //   6                     &&
+    //   7                     ||
+    //   8                      =
+
+// Assignment Operators (Shorthand Operators):
+  // =
+  // +=
+  // -=
+  // *=
+  // /=
+  // %=
+
+#include <stdio.h>
+
+int main() {
+
+  //Relational Operators
+  printf("%d \n", 4 == 4); //return 1 means true.
+  printf("%d \n", 4 == 2); //return 0 means false.
+  printf("%d \n", 4 > 2); //1
+  printf("%d \n", 4 < 2); //0
+  printf("%d \n", 4 >= 2); //1
+  printf("%d \n", 4 <= 2); //0
+  printf("%d \n", 4 != 2); //1
+  
+
+  //Logical Operators
+  printf("%d \n", 3 > 4 && 5 > 2); //0
+  printf("%d \n", 3 > 4 || 5 > 2); //1
+  printf("%d \n", !(3>2)); //0
+  printf("%d \n", !((5 > 1 ) && (3 > 4))); //1
+
+  //Assignment Operators
+  int a = 1;
+  int b = 4;
+  // a = a + b;
+  a += b;
+  printf("%d \n",a);
+  a *= b;
+  printf("%d \n",a);
+  a -= b;
+  printf("%d \n",a);
+  a /= b;
+  printf("%d \n",a);
+  a %= b;
+  printf("%d \n",a);
+
+
+  return 0;
+}
+
+
+// Practice Qs 5
+  // Write a program to check if a number is divided by 2 or not.
+
+#include<stdio.h>
+
+int main() {
+  int x;
+  printf("Enter a number: ");
+  scanf("%d", &x);
+  printf("%d ", x%2 == 0);
+
+  return 0;
+}
+
+
+
+// Practice Qs 6
+  // Write a program to tell if it is even or odd.
+
+#include<stdio.h>
+
+int main() {
+  //even -> 1
+  // odd -> 0
+  int x;
+  printf("Enter a number: ");
+  scanf("%d", &x);
+  printf("%d ", x % 2 == 0);
+
+
+  return 0;
+}
+
+
+
+// Practice Qs 7
+  // Are the following valid or not?
+  // a. int a = 8^8; -> valid
+  // b. int x; int y = x; -> valid
+  // c. int x, y = x; //invalid
+  // d. char stars = '**'
+
+#include<stdio.h>
+
+int main() {
+ 
+  printf("%d ", 8 ^ 8); //valid //0 (XOR Operator)
+  
+  int x; int y = x; //valid
+  int x, int y = x; //invlaid
+  char stars = '**' //warning: declared multi-character constants, conversion from char to int
+  
+
+
+  return 0;
+}
