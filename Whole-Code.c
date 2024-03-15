@@ -901,3 +901,85 @@ int main() {
 
   return 0;
 }
+
+
+
+
+// Practice Qs 8
+// Print 1 (true) or O(false) for following statements:
+  // a. if it's sunday & it's snowing -> true
+  // b. if it's monday or it's raining -> true
+  // c. if a number is greater than 9 & less than 100 -> true (2 digit number)
+
+#include<stdio.h>
+
+int main() {
+ 
+ // a. if it's sunday & it's snowing -> true
+  // int isSunday = 1;
+  // int isSnowing = 1;
+  // printf("%d \n", isSunday && isSnowing); //1
+  
+  int isSunday = 0;
+  int isSnowing = 1;
+  printf("%d \n", isSunday && isSnowing); //0
+
+
+  // b. if it's monday or it's raining -> true
+  int isMonday = 0;
+  int isRaining = 1;
+  printf("%d \n", isMonday || isRaining); //1
+
+  // c. if a number is greater than 9 & less than 100 -> true (2 digit number)
+    // x > 9 && x < 100 -> it must be 2 digit number
+
+  int x;
+  printf("Enter Number: ");
+  scanf("%d", &x);
+  printf("%d \n", x > 9 && x < 100); 
+
+  return 0;
+}
+
+// HOMEWORK SET
+// a. Write a program to print the average of 3 numbers.
+// b. Write a program to check if given character is digit
+// or not.
+// c. Write a program to print the smallest number,
+
+  // a. Write a program to print the average of 3 numbers.
+  #include<stdio.h>
+
+  int main() {
+
+    int a = 1;
+    int b = 2;
+    int c = 3;
+
+    float average = a + b + c / 3;
+    printf("The average of 3 numbers is %f\n", average);
+
+    return 0;
+  }
+
+
+
+
+  // b. Write a program to check if given character is digit or not.
+  #include<stdio.h>
+
+  int main() {
+    char character;
+    printf("Enter character: ");
+    scanf("%c, ", character);
+    
+    if(character == '0' || character == '1' || character == '2' || character == '3 ' || character == '4' || character == '5' || character == '6' || character == '7' || character == '8' || character == '9') {
+      printf("Character is digit");
+    }
+    else {
+      printf("character is non digit");
+    }
+
+    return 0;
+  }
+
