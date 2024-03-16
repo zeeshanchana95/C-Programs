@@ -1548,3 +1548,318 @@ HOMEWORK SET
   b. Write a program to check if the given number is a natural number.
   (Natural numbers start from 1)
 */
+
+
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+  //use loops to repeat some parts of the program
+  //for, while, do-while, break, continue keywords
+  
+  //used for doing repetitive tasks, use loops there
+  //instructions executed repetitively are called loop control instructions
+  //
+  //three are three types of loops:
+    //1. for
+    //2. while
+    //3. do while
+  //same task can be done using all loops mentioned above
+
+  /*
+  for loop Syntax:
+  for(initialisation; condition; updation) {
+    //do something
+  }
+  */
+
+#include<stdio.h>
+
+int main() {
+
+  //for loop
+  // for(int i = 1; i<=100; i = i + 1) {
+  //   printf("Hello, world\n");
+  // }
+
+  // i is called counter variable or iterator which helps doing some task repeatedly
+  for(int i = 10; i >= 1; i = i - 1) {
+    printf("%d \n", i);
+  }
+
+  return 0;
+}
+
+
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+//for loop
+
+//   Practice Qs 13
+  // Qs. Print the Numbers from O to IO
+  // 012345678910
+
+#include<stdio.h>
+
+int main() {
+
+  for(int i=0; i<=10; i++){
+    printf("%d \n", i);
+  }
+
+  return 0;
+}
+
+
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+//   Special Things
+// - Increment Operator
+// - Decrement Operator
+// - Loop counter can be float or even character
+// - Infinite Loop
+
+//increement or decreement operator
+#include<stdio.h>
+
+int main() {
+  
+  // i++ (post increment) -> use, then increase
+  int i = 1;
+  printf("%d\n", i++);
+  printf("%d\n", i);
+  
+  // ++i (pre-increement) -> increase, then use
+  int j = 1;
+  printf("%d\n", ++j);
+  printf("%d\n", j);
+
+  //NOTE: same as the case for decrement
+  //post decrement operator
+  int i = 1;
+  printf("%d\n", i--);
+  printf("%d\n", i);
+  
+  //pre-decrement operator
+  int i = 1;
+  printf("%d\n", --i);
+  printf("%d\n", i);
+
+  return 0;
+}
+
+
+// - Loop counter can be float or even character
+#include<stdio.h>
+
+int main() {
+ 
+  for(float i=1.0; i<=5.0; i++) {
+    printf("%f \n", i);
+  }
+
+  for(char ch='a'; ch <= 'z'; ch++) {
+    printf("%c \n", ch);
+  }
+
+  return 0;
+}
+
+
+
+// - Infinite Loop: 
+  //loop that run infinitely
+  //create loop by ommiting condition part in for loop or write "true" in condition place
+
+#include<stdio.h>
+
+int main() {
+ 
+ for(int i=1;; i++ ) {
+  printf("Hello World!\n");
+ }
+ for(int i=1; true; i++ ) {
+  printf("Hello World!\n");
+ }
+
+  return 0;
+}
+
+//NOTE: always keep in mind that you must specify condition in loop so that they don't end up run infinitely
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+  //while loop
+  /*
+    while(condition) {
+      //do something
+    }
+  */
+
+
+#include<stdio.h>
+
+int main() {
+ 
+ int i=1;
+ while(i<10) {
+  printf("%d\n", i);
+  i++;
+ }
+
+  return 0;
+}
+
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+  //while loop
+  /*
+    while(condition) {
+      //do something
+    }
+  */
+
+
+// Practice Qs 14
+// Print the numbers from O to n, if n is given by user
+
+#include<stdio.h>
+
+int main() {
+ 
+ int number;
+ int i = 0;
+ printf("enter number: ");
+ scanf("%d", &number);
+ 
+ while(i <= number) {
+  printf("%d\n", i);
+  i++;
+ }
+
+  return 0;
+}
+
+
+
+
+ //do-while loop
+
+ /*
+  do {
+    //do something
+  } while(condition);
+ */ 
+
+#include<stdio.h>
+
+int main() {
+ 
+ int number;
+ int i = 0;
+ printf("enter number: ");
+ scanf("%d", &number);
+ 
+ do {
+  printf("%d\n", i);
+  i++;
+ }
+ while(i <= number); 
+
+  return 0;
+}
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+//  Practice Qs 15
+  // Print the Sum of First n Natural Numbers.
+  // Also, print them in reverse.
+ 
+#include<stdio.h>
+
+int main() {
+ 
+ int number;
+ int i = 1;
+ int sum;
+ printf("enter number: ");
+ scanf("%d", &number);
+ 
+ do {
+  sum +=i;
+  i++;
+ }
+ while(i <= number); 
+
+ printf("Sum of first %d numbers is %d\n",number, sum);
+
+  for(int i=number; i>=1; i--) {
+    printf("%d \n",i);
+  }
+  return 0;
+}
+
+//version 2
+#include<stdio.h>
+
+int main() {
+  int n;
+  printf("enter number :");
+  scanf("%d", &n);
+
+  int sum = 0;
+  for(int i=1, j=n; i<=n && j>=1; i++, j--) {
+    sum = sum + i; // sum += i
+    printf("%d \n",j);
+  }
+
+  printf("sum is %d \n",sum);
+  return 0;
+}
+
+
+//version 3
+ 
+#include<stdio.h>
+
+int main() {
+  int n;
+  printf("enter number :");
+  scanf("%d", &n);
+
+  int sum = 0;
+  for(int j=n; j>=1; j--) {
+    sum = sum + j; 
+    printf("%d \n",j) ;
+  }
+
+  printf("sum is %d \n",sum);
+  return 0;
+}
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+
+//Print the table of a number input by the user
+
+#include<stdio.h>
+
+int main() {
+  int number;
+  printf("enter number :");
+  scanf("%d", &number);
+
+  for(int i=1; i<=10; i++) {
+    printf("%d X %d = %d\n",i, number, i * number);
+  }
+  return 0;
+}
