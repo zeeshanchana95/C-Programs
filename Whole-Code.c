@@ -983,3 +983,482 @@ int main() {
     return 0;
   }
 
+
+
+
+
+//CONDITIONAL OPERATORS:
+
+//CONDITIONAL OPERATORS:
+  // - used to perform actions based upon certain conditions
+  // - learn two types of conditional statements
+    //1. if-else
+    //2. swtich
+
+  //Syntax: if-else
+   /*
+    if(Condition) { //condition can be like marks > 90 && marks < 95
+      //do something if condition is TRUE
+      //execute block of code
+    }
+    else {
+      //do something if condition is FALSE
+    }
+  
+  NOTE: code inside {} is called block of code
+  */
+  
+#include <stdio.h>
+
+int main() {
+
+  int age;
+  printf("Enter age: ");
+  scanf("%d, ", &age);
+
+  //use {} to execute block of code (more than one statement)
+  if(age > 18) {
+    printf("adult \n");
+    printf("they can drive \n");
+    printf("they can vote \n");
+  }
+  else {
+    printf("non-adult \n");
+  }
+
+  printf("Thank you. \n");
+
+  //if there is only one statement to execute if condition is true or false, then we don't need to insert {} curly brackets
+  if(age > 18) 
+    printf("adult \n");
+  else
+    printf("non-adult \n");
+
+  printf("Thank you. \n");
+
+ 
+ //if add more than one statement and don't insert curly brackets, it will throw an error
+  if (age > 18)
+    printf("adult Xn");
+
+  printf("can vote\n");
+
+  else
+    printf("not adult Xn");
+
+  return 0;
+
+}
+
+
+
+
+
+
+//CONDITIONAL OPERATORS:
+  // - used to perform actions based upon certain conditions
+  // - learn two types of conditional statements
+    //1. if-else
+    //2. swtich
+
+  //Syntax: if-else
+   /*
+    if(Condition) { //condition can be like marks > 90 && marks < 95
+      //do something if condition is TRUE
+      //execute block of code
+    }
+    else {
+      //do something if condition is FALSE
+    }
+  
+  NOTE: code inside {} is called block of code
+  */
+
+  //use if-else if-else when check more than one condition like if first if's condition is false, check else if condition and if that also fails, then execute else block of code
+  //Syntax:
+   /*
+    if (condition1) {
+      //execute block of code if condition1 is TRUE
+    }
+    else if(condition2) {
+      //execute block of code if condition2 is TRUE and condition1 is FALSE
+    }
+    else if(condition3) {
+      //execute block of code if condition3 is TRUE and condition1 and condition2 are false
+    }
+    else {
+      //execute block of code if all condition fails
+    }
+  */
+
+  //if you want to check later conditions even earlier condition(s) are true then use multipel ifs
+  //syntax:
+  /*
+  if(condition1) {
+    //execute block of code if condition1 is TRUE
+  }
+  if(condition2) {
+    //execute block of code if condition2 is TRUE
+  }
+  if(condition3) {
+    //execute block of code if condition3 is TRUE
+  }
+  else {
+    //execute block of code if all condition fails
+  }
+  */
+
+#include <stdio.h>
+
+int main() {
+
+  int age;
+  printf("Enter age: ");
+  scanf("%d, ", &age);
+
+  if(age >= 18) {
+    printf("adult \n");
+  }
+  else if(age > 13 && age < 18) {
+    printf("teenager \n");
+  }
+  else {
+    printf("child \n");
+  }
+
+
+  return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+//CONDITIONAL OPERATORS:
+  //Ternary Operator:
+  // Condition ? doSomething if TRUE :  doSomething if FALSE
+
+  //use inplace of if-else statement to keep code shorter in single line
+
+  //if condition is true then run statement after ? otherwise statements after : will run
+
+  
+
+#include <stdio.h>
+
+int main() {
+
+  int age;
+  printf("enter age: ");
+  scanf("%d", &age);
+
+  age >= 0 ? printf("adult \n") : printf("not adult \n");
+  //note: you must not insert ; after the end of statement after ? 
+
+  return 0;
+
+}
+
+
+
+
+//CONDITIONAL OPERATORS:
+  //switch statement:
+    //it will match number or character and list down cases, if any one of the cases match, it will execute those statements inside that case can continue checking other cases untill and unless it get "break" statement. if it  fails to match any cases, then run default case statements.
+
+    
+
+    //syntax:
+    //for number matching
+    /*
+    switch
+      switch(number) {
+        case 1: //do something
+        break;
+      case 2 : //do something
+        break;
+      default : //do something
+    }
+    */
+
+    //for character matching
+    /*
+    switch
+      switch(character) {
+        case 'a': //do something
+        break;
+      case 'b' : //do something
+        break;
+      default : //do something
+    }
+    */
+
+    //"break" helps to get out from switch statement. So, in order to get out from switch statement, you need to you "break" statement after case execution otherwise it will keep checking other cases.
+
+#include <stdio.h>
+
+int main() {
+
+  int day; //1-mon; 2-tues; 3-wed and so on.
+  printf("Enter day (1-7): ");
+  scanf("%d", &day);
+  
+  switch (day) {
+    case 1: 
+      printf("Monday");
+      break;
+    case 2: 
+      printf("Tuesday");
+      break;
+    case 3: 
+      printf("Wednesday");
+      break;
+    case 4: 
+      printf("Thursday");
+      break;
+    case 5: 
+      printf("Friday");
+      break;
+    case 6: 
+      printf("Saturday");
+      break;
+    case 7: 
+      printf("Sunday");
+      break;
+    default: 
+      printf("not a valid day! \n");
+  }
+
+  return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+//CONDITIONAL OPERATORS:
+  //switch statement:
+    //it will match number or character and list down cases, if any one of the cases match, it will execute those statements inside that case can continue checking other cases untill and unless it get "break" statement. if it  fails to match any cases, then run default case statements.
+
+    
+
+    //syntax:
+    //for number matching
+    /*
+    switch
+      switch(number) {
+        case 1: //do something
+        break;
+      case 2 : //do something
+        break;
+      default : //do something
+    }
+    */
+
+    //for character matching
+    /*
+    switch
+      switch(character) {
+        case 'a': //do something
+        break;
+      case 'b' : //do something
+        break;
+      default : //do something
+    }
+    */
+
+    //"break" helps to get out from switch statement. So, in order to get out from switch statement, you need to you "break" statement after case execution otherwise it will keep checking other cases.
+
+    // switch Properties
+    //   a. Cases can be in any order
+    //   b. Nested switch (switch inside switch) are allowed
+      //Syntax:
+      /*
+        switch(condition) {
+          case 1:
+            //run statement if condition match with case 1
+            swtich(condition2) {
+              case 1:
+              //run statement if condition1 and condition2 are true plus condition2 match with case1
+              break;
+              case 2:
+                break;
+              case 3:
+                break;
+              
+            }
+            break;
+          case 2:
+            break;
+          default:
+
+        }
+        */
+
+    //NOTE: we can also make nested ifs (one if statement inside another if statement)
+      //Syntax:
+      /*
+        if(condition1) {
+          // run when condition1 is true
+          if(condition2) {
+            //run when condition1 and condition2 are true
+          }
+        }
+      */
+
+#include <stdio.h>
+
+int main() {
+
+  char day; //m-mon; t-tues; w-wed; T-thur; f-Fri; s-Sat; S-Sun.
+  printf("Enter day (1-7): ");
+  scanf("%s", &day);
+  
+  switch (day) {
+     case 'T': 
+      printf("Thursday");
+      break;
+    case 'f': 
+      printf("Friday");
+      break;
+    case 's': 
+      printf("Saturday");
+      break;
+    case 'm': 
+      printf("Monday");
+      break;
+    case 't': 
+      printf("Tuesday");
+      break;
+    case 'w': 
+      printf("Wednesday");
+      break;
+   
+    case 'S': 
+      printf("Sunday");
+      break;
+    default: 
+      printf("not a valid day! \n");
+  }
+
+  return 0;
+
+}
+
+
+
+
+
+//CONDITIONAL OPERATORS:
+    //NOTE: we can also make nested ifs (one if statement inside another if statement)
+      //Syntax:
+      /*
+        if(condition1) {
+          // run when condition1 is true
+          if(condition2) {
+            //run when condition1 and condition2 are true
+          }
+        }
+      */
+
+#include <stdio.h>
+
+int main() {
+
+  //nested ifs example
+  int number;
+  printf("enter number: ");
+  scanf("%d", &number);
+
+  if(number >= 0) {
+    printf("positive number \n");
+
+    if(number %2 == 0) {
+      printf("even number \n");
+    } else {
+      printf("odd number \n");
+    }
+  }
+  else {
+    printf("negative number \n");
+  }
+  return 0;
+
+}
+
+
+
+
+
+// Practice Qs 9
+// Write a program to check if a student passed or failed.
+// marks > 30 is PASS
+// marks <= 30 is FAIL
+
+#include <stdio.h>
+
+int main() {
+
+  //using if-else if-else
+  int marks;
+  printf("Enter marks (0-100): ");
+  scanf("%d", &marks);
+
+  if(marks >= 0 && marks <= 30) {
+    printf("FAIL \n");
+  } else if(marks > 30 && marks <= 100) {
+    printf("PASS \n");
+  }
+  else { 
+    printf("Invalid Marks\n");
+  }
+  
+  return 0;
+}
+
+
+
+
+// Practice Qs 9
+// Write a program to check if a student passed or failed.
+// marks > 30 is PASS
+// marks <= 30 is FAIL
+
+#include <stdio.h>
+
+int main() {
+
+  //using ternary operator
+  int marks;
+  printf("Enter marks (0-100): ");
+  scanf("%d", &marks);
+
+  //simple version 
+  // marks <= 30 ? printf("Fail"); : printf("Pass");
+  
+  // advanced version
+  marks >= 0 && marks <= 30 ? printf("Fail") 
+  : marks > 30 && marks <= 100 ? printf("Pass") 
+  : printf("Invalid Marks");
+  
+
+  return 0;
+
+
+
+}
+
