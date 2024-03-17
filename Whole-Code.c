@@ -2456,3 +2456,302 @@ int main() {
 
   return 0;
 }
+
+
+
+
+
+
+
+//CHAPTER 05: Recursion:
+  //we know that one function can call another function but
+
+  //when a funciton calls itself, it's called recursion
+
+  //in programming, any task that can be done using loops, can also be done using recursion
+
+
+
+// Practice Qs 32
+  // Print "Hello World" 5 times using recursion.
+
+#include<stdio.h>
+
+void printHelloWorld(int count);
+
+int main() {
+  printHelloWorld(5);
+  return 0;
+}
+
+//recursive function
+void printHelloWorld(int count) {
+  if(count == 0) {
+    return;
+  }
+  printf("Hello World\n ");
+  printHelloWorld(count - 1);
+}
+
+
+
+
+
+
+//CHAPTER 05: Recursion using Math
+  //f(x) = x^2
+  //f(f(x)) for x = 2; here f(x) is recursive function
+
+  //Normal Function Call:
+    // main() -> function1() -> function2()
+    //and then return value from
+    //function2() -> function1() -> main()
+
+
+  //Recursion Function Call
+    //main() -> function1()  -> function1()
+    //and then return value from
+    //function1() -> function1() -> function1() -> main()
+
+
+
+
+
+
+//CHAPTER 05: Recursion using Math
+
+// Practice Qs 30
+// Sum of first n natural numbers.
+
+//1 + 2 + 3 + 4 + ................ n - 1 + n --> sum (n - 1) + n
+//Example: sum of first 5 numbers
+
+//demo:
+ //n = 5 -> 1 + 2 + 3 + 4 + 5 --> sum (4) + 5
+ //n = 4 -> 1 + 2 + 3 + 4 --> sum (3) + 4
+ //n = 3 -> 1 + 2 + 3 --> sum(2) + 3 
+ //n = 2 -> 1 + 2 --> sum (n - 1) + 2
+ //n = 1 -> 1 (base case where recursion stop calling itself and start back tracking)
+ 
+
+#include<stdio.h>
+
+int sum (int n);
+
+int main() {
+
+  int s = sum(5);
+  printf("Sum of first 5 natural numbers: %d\n", s);
+  return 0;
+}
+
+//recursive function
+int sum (int n) {
+  if(n == 1) { 
+    return 1;
+  }
+  int sumNm1 = sum(n  - 1);
+  int sumN = sumNm1 + n;
+  return sumN;
+}
+
+
+
+
+
+//CHAPTER 05: Recursion using Math
+
+// Practice Qs 31
+//Factorial of n.
+  //5! = 1 x 2 x 3 x 4 x 5 --> 4! x 5
+  //4! = 1 x 2 x 3 x 4 --> 3! x 4
+  //3! = 1 x 2 x 3 --> 3! x 4
+  //2! = 1 x 2 --> 2! x 3
+  //1! = 1 --> 1! x 2
+
+  //So, fact(n) = fact(n - 1) x n;
+ 
+
+#include<stdio.h>
+
+int fact (int n);
+
+int main() {
+
+  int s = fact(5);
+  printf("Factorial of first n: %d\n", s);
+  return 0;
+}
+
+//recursive function
+int fact (int n) {
+  if(n == 0) { 
+    return 1;
+  }
+  int factNm1 = fact(n - 1);
+  int factN = factNm1 * n;
+  return factN;
+}
+
+
+
+//CHAPTER 05: Recursion using Math
+
+    // Properties of Recursion
+        // a. Anything that can be done with Iteration, can be done with // recursion and vice-versa.
+        // b. Recursion can sometimes give the most simple solution.
+        // c. Base Case is the condition which stops recursion.
+        // d. Iteration has infinite loop & Recursion has stack overflow
+
+
+
+//CHAPTER 05: Recursion using Math
+// Practice Qs 32
+// Write a function to convert celsius to fahrenheit.
+//formula: fahrenheit = (celsius * 9/5) + 32
+
+#include<stdio.h>
+
+float convertTemp(float celsius);
+
+int main() {
+    float far = convertTemp(32);
+    printf("far : %f",far);
+    return 0;
+}
+float convertTemp(float celsius) {
+    float far = celsius * (9.0/5.0) + 32;
+    return far;
+}
+
+
+
+
+//CHAPTER 05: Recursion using Math
+
+// Practice Qs 33
+// Write a function to calculate Percentage of a student from Marks in Science, Math & Sanskrit.
+
+#include<stdio.h>
+
+int calcPercentage(int science, int math, int sanskrit);
+
+int main() {
+    int sc = 98;
+    int math = 95;
+    int sanskrit = 99;
+
+    printf("Percentage is: %d\n", calcPercentage(sc, math, sanskrit));
+
+    return 0;
+}
+
+int calcPercentage(int science, int math, int sanskrit) {
+    return ((science + math + sanskrit) * 100 ) / 300 ;
+}
+
+
+
+
+
+
+//CHAPTER 05: Recursion using Math
+
+    // Practice Qs 34
+    // Write a function to print n terms of the fibonacci sequence.
+    //0 1 1 2 3 5 8 13 21 ...... 
+    
+    //Example:
+    // fib(2) = fib(0) + fib(1)
+    // fib(3) = fib(1) + fib(2)
+    // fib(4) = fib(2) + fib(3)
+
+    // fib(n) = fib(n - 1) + fib(n - 2)
+
+#include<stdio.h>
+
+int fib(int n);
+
+int main() {
+   
+   printf("%d",fib(6));
+
+    return 0;
+}
+
+int fib(int n) {
+    //base case
+    if(n == 0) {
+        return 0;
+    }
+    if(n == 1) {
+        return 1;
+    }
+    
+    int fibNm1 = fib(n - 1);
+    int fibNm2 = fib(n - 2);
+    int fibN = fibNm1 + fibNm2;
+
+    // printf("Fib of %d is : %d\n",n, fibN);
+
+    return fibN;
+}
+
+
+
+
+
+
+
+
+//CHAPTER 05: Recursion using Math
+
+    // Practice Qs 34
+    // Write a function to print n terms of the fibonacci sequence.
+    //0 1 1 2 3 5 8 13 21 ...... 
+    
+    //Example:
+    // fib(2) = fib(0) + fib(1)
+    // fib(3) = fib(1) + fib(2)
+    // fib(4) = fib(2) + fib(3)
+
+    // fib(n) = fib(n - 1) + fib(n - 2)
+
+#include<stdio.h>
+
+int fib(int n);
+
+int main() {
+   
+   printf("%d",fib(6));
+
+    return 0;
+}
+
+int fib(int n) {
+    //base case
+    if(n == 0) {
+        return 0;
+    }
+    if(n == 1) {
+        return 1;
+    }
+    
+    int fibNm1 = fib(n - 1);
+    int fibNm2 = fib(n - 2);
+    int fibN = fibNm1 + fibNm2;
+
+    // printf("Fib of %d is : %d\n",n, fibN);
+
+    return fibN;
+}
+
+// Practice Qs 35
+// Write a function to print the nth term of the fibonacci sequence.
+
+
+// HOMEWORK SET
+// a. Write a function to find sum of digits of a number.
+// b. Write a function to find square root of a number.
+// c. Write a function to print "Hot" or "Cold" depend on the temperature user enters.
+// d. Make your own pow function.

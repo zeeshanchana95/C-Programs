@@ -1,35 +1,52 @@
 
-//CHAPTER 05: Function
-  // Practice Qs 31
-  // Write functions to calculate area of a square, a circle & a rectangle.
+//CHAPTER 05: Recursion using Math
+
+    // Practice Qs 34
+    // Write a function to print n terms of the fibonacci sequence.
+    //0 1 1 2 3 5 8 13 21 ...... 
+    
+    //Example:
+    // fib(2) = fib(0) + fib(1)
+    // fib(3) = fib(1) + fib(2)
+    // fib(4) = fib(2) + fib(3)
+
+    // fib(n) = fib(n - 1) + fib(n - 2)
 
 #include<stdio.h>
-#include<math.h>
+
+int fib(int n);
 
 int main() {
+   
+   printf("%d",fib(6));
 
-  float areaOfSquare = 0, areaOfCircle = 0, areaOfRectangle = 0;
-  float radius;
-  float length;
-  float width;
-  float sideLength;
-
-  printf("Enter the radius of a circle: ");
-  scanf("%f", &radius);
-  area = M_PI * radius * radius;  
-  printf("The area of a circle with radius %f is %f\n", radius, area);
-
-
-  printf("Enter the length and width of a rectangle: ");
-  scanf("%f %f", &length, &width);
-  area = length * width;
-  printf("The area of a rectangle with length %f and width %f is %f\n", length, width, area);
-  
-  printf("Enter the length for square");
-  scanf("%f", &sideLength);
-  area = sideLength * sideLength;
-  printf("The area of a square with length %f is %f\n", sideLength, area);
-
-
-  return 0;
+    return 0;
 }
+
+int fib(int n) {
+    //base case
+    if(n == 0) {
+        return 0;
+    }
+    if(n == 1) {
+        return 1;
+    }
+    
+    int fibNm1 = fib(n - 1);
+    int fibNm2 = fib(n - 2);
+    int fibN = fibNm1 + fibNm2;
+
+    // printf("Fib of %d is : %d\n",n, fibN);
+
+    return fibN;
+}
+
+// Practice Qs 35
+// Write a function to print the nth term of the fibonacci sequence.
+
+
+// HOMEWORK SET
+// a. Write a function to find sum of digits of a number.
+// b. Write a function to find square root of a number.
+// c. Write a function to print "Hot" or "Cold" depend on the temperature user enters.
+// d. Make your own pow function.
