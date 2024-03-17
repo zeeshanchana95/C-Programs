@@ -1863,3 +1863,99 @@ int main() {
   }
   return 0;
 }
+
+
+
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+
+//break statement
+  //used in switch to take out from switch
+  // exit from loop 
+  // take you from inner loop to outer loop if loops are nested
+  
+
+#include<stdio.h>
+
+int main() {
+  
+  for(int i=1; i<=5; i++) {
+    if(i==3) {
+      break;
+      //exit from loop when i equals to 3
+    }
+    printf("%d \n", i);
+  }
+  
+  printf("end");
+
+  return 0;
+}
+
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+
+//break statement
+  //   Practice Qs 17
+  // Keep taking numbers as input from user
+  // until user enters an odd number.
+
+#include<stdio.h>
+
+int main() {
+  
+  int number;
+  while(1) {
+    printf("Enter number: ");
+    scanf("%d", &number);
+
+    if(number %2 != 0 ) {
+      printf("Number entered %d is odd \n", number);
+      break;
+    }
+    else {
+      printf("Number entered %d is even\n", number);
+    }
+  }
+
+  printf("Thank you.")
+
+  return 0;
+}
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+
+//break statement
+#include<stdio.h>
+
+int main() {
+  
+  int number;
+  while(1) {
+    printf("Enter number: ");
+    scanf("%d", &number);
+
+    if(number %7 == 0 ) {
+      printf("Number entered %d is multiple of 7 \n", number);
+      break;
+    }
+    else {
+      printf("Number entered %d is not multiple of 7 \n", number);
+    }
+  }
+
+  printf("Thank you.");
+
+  return 0;
+}
+
+
+// Practice Qs 18
+// Keep taking numbers as input from user until
+// user enters a number which is multiple of 7.
