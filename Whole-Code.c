@@ -1932,6 +1932,11 @@ int main() {
 //CHAPTER 04: LOOP CONTROL INSTRUCTION
 
 //break statement
+
+// Practice Qs 18
+// Keep taking numbers as input from user until
+// user enters a number which is multiple of 7.
+
 #include<stdio.h>
 
 int main() {
@@ -1956,6 +1961,163 @@ int main() {
 }
 
 
-// Practice Qs 18
-// Keep taking numbers as input from user until
-// user enters a number which is multiple of 7.
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+
+  //continue statement
+    //skip to the next iteration and leaving remaining statements unexected wherever used of current iteration
+    
+    //reverse of break statement function
+    
+    //it says leave the current iteration's remaining statements and continue to the next iteration
+
+#include<stdio.h>
+int main() {
+  
+  for(int i = 1; i <= 5; i++) {
+    if(i == 3) {
+      continue;
+    }
+    printf("%d\n", i);
+  }
+
+  return 0;
+}
+
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+
+  //continue statement
+    // Practice Qs 19
+    // Print all numbers from 1 to IO except for 6.
+
+
+#include<stdio.h>
+int main() {
+  
+  for(int i = 1; i <= 10; i++) {
+    if(i == 6) {
+      continue;
+    }
+    printf("%d\n", i);
+  }
+
+  return 0;
+}
+
+
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+
+  //continue statement
+    // Practice Qs 20
+    // Print all the odd numbers from 5 to 50.
+
+#include<stdio.h>
+int main() {
+  
+  for(int i = 5; i <= 50; i++) {
+    if(i %2 == 0) {
+      continue;
+    }
+    printf("%d\n", i);
+  }
+
+  return 0;
+}
+
+
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+
+  //continue statement
+    // Practice Qs 21
+    // Print the factorial of a number n.
+
+#include<stdio.h>
+int main() {
+  
+  int n;
+  printf("Enter number: ");
+  scanf("%d", &n);
+
+  int factorial = n;
+  for(int i = n; i >= 1; i--) {
+    if(i==n) {
+      continue;
+    }
+    factorial = factorial * i;
+  }
+    printf("Factorial of number %d is %d\n", n, factorial);
+
+  return 0;
+}
+
+//version 2
+#include<stdio.h>
+int main() {
+  int n;
+  printf("enter number : " ) ;
+  scanf("%d", &n);
+  
+  int fact = 1;
+  for (int i=1; i<=n; i++) {
+    fact = fact * i;
+  }
+  
+  printf("final factorial is %d", fact );
+  
+  return 0;
+}
+
+
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+
+  //continue statement
+    // Practice Qs 22
+    // Print reverse of the table for a number n.
+
+#include<stdio.h>
+int main() {
+  
+  int n;
+  printf("Enter number: ");
+  scanf("%d", &n);
+
+  for(int i = 10; i >= 1; i--) {
+    printf("%d X %d  = %d\n", i, n, i*n);
+  }
+
+  return 0;
+}
+
+
+
+//CHAPTER 04: LOOP CONTROL INSTRUCTION
+
+  //continue statement
+    // Practice Qs 23
+    // Calculate the sum of all numbers between 5 and 50.(including 5 & 50)
+
+#include<stdio.h>
+int main() {
+
+  int sum = 0;
+  for(int i = 5; i <= 50 ; i++) {
+    sum += i;
+  }
+  printf("Sum is %d", sum);
+
+  return 0;
+}
