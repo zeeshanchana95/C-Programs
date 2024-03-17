@@ -2121,3 +2121,338 @@ int main() {
 
   return 0;
 }
+
+
+
+
+
+//CHAPTER 05: Function and Recursion
+  //functions
+    //a part of code to do some task
+    //take input, do task, and return result or output
+    //its like buttons of remote
+
+    //block of code that performs particular task
+    //take argument -> do work -> return result
+    //functions can be used multiple times
+    //it increases code resusability
+
+    //if same code is needed atleast three places in, then it is better to make function from it and use on other places
+
+    //function is represented by "name" with () brackets like "printf()"
+
+    // Syntax 1
+    // Function Prototype/function declaration
+      // void printHello();  //tell the compiler that we are writing function
+
+        //"void" means function will not return anything or value
+
+
+    // Syntax 2
+    // Function Definition: define work to do
+      // void printHello() {
+      //  printf("Hello");
+      //}
+
+    //Syntax 3
+    //function call: use the defined function
+      // int main () {
+      //   printf();
+      //   return 0;
+      // }
+
+    //main() is also a function 
+
+    //main benefit of function is that no matter how many times we change function implementation, function calling will remain same like we don't need to go at each place and modify function calling
+
+
+
+
+
+#include<stdio.h>
+
+//function declaration/prototyping
+void printHello();
+
+int main() {
+
+  //function calling
+  printHello();
+  printHello();
+  printHello();
+
+  return 0;
+}
+
+//function definition/implementation
+void printHello() {
+  printf("Hello\n");
+  printf("My name is Zeeshan \n");
+} 
+
+
+//CHAPTER 05: Function and Recursion
+  //functions
+
+  // Practice Qs 27
+  // Write 2 functions - one to print "Hello" & second to print "good bye".
+   
+#include<stdio.h>
+
+void printHello();
+void printGoodbye();
+
+int main() {
+
+  printHello();
+  printGoodbye();
+
+  return 0;
+}
+
+void printHello() {
+  printf("Hello\n");
+}
+
+void printGoodbye() {
+  printf("Goodbye\n");
+}
+
+
+
+
+//CHAPTER 05: Function and Recursion
+  //functions
+  // Practice Qs 28
+  // Write a function that prints Namaste if user is Indian & Bonjour if the user is French.
+
+   
+#include<stdio.h>
+
+void printNamaste();
+void printBonjour();
+
+int main() {
+
+  printf("Enter f for French & i for Indian: ");
+  char choice;
+  scanf("%c", &choice);
+  if(choice == 'i') {
+    printNamaste();
+  }
+  else {
+    printBonjour();
+  }
+
+  return 0;
+}
+
+void printNamaste() {
+  printf("Namaste\n");
+}
+
+void printBonjour() {
+  printf("Bongour\n");
+}
+
+
+
+
+
+
+
+
+
+//CHAPTER 05: Function and Recursion
+  //function properties:
+    //1. execution always starts from main function
+    //2. a function gets called directly or indireclty from main
+
+#include<stdio.h>
+
+//3. there can be multiple functions in a program
+void printNamaste();
+void printBonjour();
+
+//1. execution always starts from main function
+int main() {
+
+//2. a function gets called directly or indireclty from main
+  printf("Enter f for French & i for Indian: ");
+  char choice;
+  scanf("%c", &choice);
+  if(choice == 'i') {
+    printNamaste();
+  }
+  else {
+    printBonjour();
+  }
+
+  return 0;
+}
+
+void printNamaste() {
+  printf("Namaste\n");
+}
+
+void printBonjour() {
+  printf("Bongour\n");
+}
+
+
+
+
+
+//CHAPTER 05: Function Types
+  //Function Types:
+    //1. Library Functions
+      //- specific functions in-built in C, need to add library in order to use in-built function
+      //- Example: scanf(), printf()
+
+    //2. User-defined Functions
+      //- declared & defined by programmer 
+
+
+
+//CHAPTER 05: Function Types
+  //Passing Arguments:
+   //functions can take value (called parameter) & give some value (called argument)
+
+// Passing Arguments
+  // void printHello( )
+  // void printTable(int n);
+  // int sum(int a, int b);
+
+#include<stdio.h>
+
+int sum(int a, int b);
+
+int main() {
+
+  int a,b
+  printf("Enter first number: ");
+  scanf("%d", &a);
+
+  printf("Enter second number: ");
+  scanf("%d", &b);
+
+  int s = sum(a,b);
+  printf("The sum of %d and %d is %d\n", a, b, s);
+  
+  return 0;
+}
+
+int sum(int a, int b){
+  return a+b;
+}
+
+
+
+
+
+
+
+
+//CHAPTER 05: Function
+
+  //Arguments vs Parameters
+
+  //Arguments
+    //values that are passed in function call
+    //used to send value
+    //actual paramete
+
+  //Parameters
+    //values in function declaration & definition
+    //used to receive value
+    //format parameter
+
+
+
+//CHAPTER 05: Function
+  
+  // NOTE: 
+  // a. Function can only return one value at a time
+  // b. Changes to parameters in function don't change the values in calling function.
+    // Because a copy of argument is passed to the function [called that process Pass by Value]
+
+#include<stdio.h>
+
+void calculatePrice( float value) ;
+
+int main() {
+  float value = 100.0;
+  calculatePrice(value);
+  printf("Values is %f\n", value);
+  return 0;
+
+}
+
+void calculatePrice( float value) {
+  value = value + (0.18 * value);
+  printf("final price is : %f\n", value);
+}
+
+
+
+
+//CHAPTER 05: Function
+  
+//   Practice Qs 29
+  // Use library functions to calculate the square of a number given by user.
+
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+
+  float number;
+  printf("Enter a number: ");
+  scanf("%f", &number);
+
+  printf("The square of %f is %f\n", number, pow(number, 2));
+
+  
+  return 0;
+}
+
+
+
+
+
+
+
+//CHAPTER 05: Function
+  // Practice Qs 31
+  // Write functions to calculate area of a square, a circle & a rectangle.
+
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+
+  float areaOfSquare = 0, areaOfCircle = 0, areaOfRectangle = 0;
+  float radius;
+  float length;
+  float width;
+  float sideLength;
+
+  printf("Enter the radius of a circle: ");
+  scanf("%f", &radius);
+  area = M_PI * radius * radius;  
+  printf("The area of a circle with radius %f is %f\n", radius, area);
+
+
+  printf("Enter the length and width of a rectangle: ");
+  scanf("%f %f", &length, &width);
+  area = length * width;
+  printf("The area of a rectangle with length %f and width %f is %f\n", length, width, area);
+  
+  printf("Enter the length for square");
+  scanf("%f", &sideLength);
+  area = sideLength * sideLength;
+  printf("The area of a square with length %f is %f\n", sideLength, area);
+
+
+  return 0;
+}
