@@ -2755,3 +2755,429 @@ int fib(int n) {
 // b. Write a function to find square root of a number.
 // c. Write a function to print "Hot" or "Cold" depend on the temperature user enters.
 // d. Make your own pow function.
+
+
+
+
+
+
+
+
+//Chapter 06: Pointers
+    //pointer is a variable that stores address of another variable
+    //(write * between dataType and variable name -> pointer name)
+    
+    // * means value at address 
+    // & means address of 
+    // *ptr = will return value store at pointer variable named "ptr"
+    
+    //Syntax:
+        //normal variable
+        // int age = 22;
+
+        //pointer variable
+        // int *ptr = &age;
+        // int _age = *ptr;
+    
+#include<stdio.h>
+
+int main() {
+
+    int age = 22;
+    int *ptr = &age;
+    int _age = *ptr;
+    printf("%d\n", _age);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+//Chapter 06: Pointers
+
+//declaring pointers
+    // int *ptr;
+    // char *ptr;
+    // float *ptr;
+
+    //type of pointer decides which type of value stored at storing address is
+
+// Format Specifier
+    // printf("%p", &age); -> print address where variable age is stored
+
+    // printf("%p", ptr); -> print address where variable age is stored
+
+    // printf("%p", &ptr); -> print address where variable ptr is stored
+
+    //%p means pointer address -> return hexadecimal value that can be seen via %u (unsigned int) to understand better
+
+
+
+#include<stdio.h>
+
+int main() {
+
+    int age = 22;
+    int *ptr = &age;
+    
+    //printing address
+    
+    //printf("%p\n", &age);
+    printf("%u\n", &age);
+
+    printf("%u\n", ptr);
+
+    printf("%u\n", &ptr);
+
+
+    //printing value stored in pointer
+    //print value stored in age
+    printf("%d\n", age); 
+    printf("%d\n", *ptr);
+    printf("%d\n", *(&age));
+
+    return 0;
+}
+
+
+
+
+//Chapter 06: Pointers
+
+//practice question
+    // int *ptr;
+    // int x;
+
+    // ptr = &x;
+    // *ptr = 0;
+
+    // printf(" x = %d\n", x);
+    // printf(" *ptr = %d\n", *ptr);
+
+    // *ptr += 5;
+    // printf(" x = %d\n", x);
+    // printf(" *ptr = %d\n", *ptr);
+
+    // (*ptr)++;
+    // printf(" x = %d\n", x);
+    // printf(" *ptr = %d\n", *ptr);
+
+
+#include<stdio.h>
+
+int main() {
+
+    int *ptr;
+    int x;
+
+    ptr = &x;
+    *ptr = 0;
+
+    printf(" x = %d\n", x); //0
+    printf(" *ptr = %d\n", *ptr); //0
+
+    *ptr += 5;
+    printf(" x = %d\n", x); //5
+    printf(" *ptr = %d\n", *ptr); //5
+
+    (*ptr)++;
+    printf(" x = %d\n", x); //6
+    printf(" *ptr = %d\n", *ptr); //6
+
+    return 0;
+}
+
+
+
+//Chapter 06: Pointer to  Pointer 
+    //Pointer to Pointer is a variable that stores the memory address of another pointer
+
+    // Pointer to Pointer
+    
+    // Syntax
+    // int **pptr;
+    // char **pptr;
+    // float **pptr;
+
+
+
+#include<stdio.h>
+
+int main() {
+
+    float price = 100;
+    float *ptr = &price;
+    float **pptr = &ptr; //Pointer to Pointer
+    
+
+    return 0;
+}
+
+
+
+
+//Chapter 06: Pointer to  Pointer 
+
+// Practice Qs 37
+// Print the value of 'i' from its pointer to pointer
+
+#include<stdio.h>
+
+int main() {
+
+    int i = 5;
+    int *ptr = &i;
+    int **pptr = &ptr;
+
+    printf("%d\n", *pptr); //print "address of ptr"
+    printf("%d\n", **pptr); //print value stored at "address of ptr"
+
+    return 0;
+}
+
+
+
+//Chapter 06: Pointers
+
+    //Pointers in Function Call
+
+    //Function Call
+        // - there are 2 types of function calls in C
+        // 1. call by value
+            // - we pass value of variables as argument
+
+        //2. call by reference
+            // - we pass address of variable as argument
+
+#include<stdio.h>
+
+void square(int n);
+void _square(int *n);
+
+int main() {
+
+    int number = 4;
+
+    //call by value
+    square(2);
+    printf("number  = %d\n",number); //value remain same due to call by value means copy of value passed to function call and keep the original value same
+
+    //call by reference
+    _square(&number);
+    printf("number  = %d\n",number); //value remain same due to call by value means copy of value passed to function call and keep the original value same
+    
+    return 0;
+}
+
+void square(int n) {
+    n = n * n;
+    printf("square = %d\n", n);
+}
+   
+void _square(int *n) {
+    *n = (*n) * (*n);
+    printf("square = %d\n", *n);
+}
+
+
+
+//Chapter 06: Pointers
+
+    //Pointers in Function Call
+
+    //Function Call
+        // - there are 2 types of function calls in C
+        // 1. call by value
+            // - we pass value of variables as argument
+
+        //2. call by reference
+            // - we pass address of variable as argument
+
+#include<stdio.h>
+
+void square(int n);
+void _square(int *n);
+
+int main() {
+
+    int number = 4;
+
+    //call by value: pass copy of value stored in variable number
+    square(2);
+    printf("number  = %d\n",number); //4
+
+    //call by reference: pass copy of address of variable number where value is stored
+    _square(&number); 
+    printf("number  = %d\n",number); //16
+    
+    return 0;
+}
+
+void square(int n) {
+    n = n * n;
+    printf("square = %d\n", n);
+}
+   
+void _square(int *n) {
+    *n = (*n) * (*n);
+    printf("square = %d\n", *n);
+}
+
+
+
+
+
+//Chapter 06: Pointers
+
+// Practice Qs 38
+    // Swap 2 numbers, a & b.
+    //swap means interchange values
+
+#include<stdio.h>
+
+//call by value
+void swap(int a, int b);
+
+int main() {
+
+    int x = 3, y = 5;
+    
+    printf("x = %d, y = %d\n", x, y); //x = 3, y = 5
+    
+    swap(x, y); // x = 5, y = 3;
+
+    printf("x = %d, y = %d\n", x, y); //x = 3, y = 5
+    return 0;
+}
+
+
+void swap(int a, int b) {
+    int t;
+    t = a;
+    a = b;
+    b = t;
+    printf("a = %d, b = %d\n", a, b);
+}
+
+
+
+
+//Chapter 06: Pointers
+
+// Practice Qs 38
+    // Swap 2 numbers, a & b. Swap means interchange values
+
+#include<stdio.h>
+
+//pass by reference: use when we want the function to return multiple values 
+
+void _swap(int *a, int *b);
+
+int main() {
+
+    int x = 3, y = 5;
+    _swap(&x, &y);
+    printf("x: %d, y: %d\n", x,y);
+
+    return 0;
+}
+
+void _swap(int *a, int *b) {
+    int t = *a;
+    *a = *b;
+    b* = t;
+}
+
+
+
+
+//Chapter 06: Pointers
+
+// Practice Qs 39
+//Will the address output be same?
+
+void printAddress(int n);
+
+int main() {
+    int n = 4;
+
+    printf("Address of n is: %u\n", &n);
+    printAddress(n);
+
+    return 0;
+}
+
+void printAddress(int n) {
+    printf("Address of n is: %u\n", &n);
+}
+//So, address will not same due to call by value
+
+
+
+
+
+//Chapter 06: Pointers
+
+// Practice Qs 39
+//Will the address output be same?
+
+void printAddress(int *n);
+
+int main() {
+    int n = 4;
+
+    printf("Address of n is: %u\n", &n);
+    printAddress(&n);
+
+    return 0;
+}
+
+void printAddress(int *n) {
+    printf("Address of n is: %u\n", n);
+}
+//So, address will be same due to call by reference
+
+
+
+
+
+
+//Chapter 06: Pointers
+
+// Practice Qs 40
+// Write a function to calculate the sum, product & average of 2 numbers. Print that average in the main function.
+
+
+void doWork(int a, int b, int *sum, int *prod, int *avg);
+int main() {
+
+    int a = 3, b = 5;
+    int sum, prod, avg;
+
+    
+    doWork(a, b, &sum, &prod, &avg);
+
+    printf("sum = %d, prod = %d, avg = %d\n", sum, prod, avg);
+    
+    return 0;
+}
+
+void doWork(int a, int b, int *sum, int *prod, int *avg) {
+    *sum = a + b;
+    *prod = a * b;
+    *avg = (a + b) / 2;
+
+
+}
+
+// HOMEWORK SET
+    // a. Write a program in C to find the maximum number
+    // between two numbers using a pointer.
+    // b. Write a program in C to print the elements of an array in reverse order.
+    // c. Write a program in C to print all the letters in english alphabet using a pointer.
