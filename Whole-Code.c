@@ -3517,3 +3517,236 @@ void printNumbers(int *arr, int n) {
 // }
 
 
+
+
+// Chapter 07: Arrays
+    
+    //Multi-dimensional Arrays
+        //2D Arrays [][]
+            //used in matrices
+
+        //declare
+            //int arr[][] = { {1,2}, {3,4}};
+
+        //access
+            // arr[0][0];
+            // arr[0][1];
+            // arr[1][0];
+            // arr[1][1];
+
+        //there are also arrays with more dimensions like 3D or 4D etc
+    
+
+#include<stdio.h>
+
+
+int main () {
+
+    int marks[2][3]; // _ _ _  | _ _ _ 
+    marks[0][0] = 90;
+    marks[0][1] = 89;
+    marks[0][2] = 78;
+
+    marks[1][0] = 90;
+    marks[1][1] = 89;
+    marks[1][2] = 78;
+
+    printf("%d", marks[0][0]);
+
+
+    return 0;
+}
+
+
+
+
+
+// Chapter 07: Arrays
+    
+    //Multi-dimensional Arrays
+    //    Practice Qs 42
+    //     Write a function to count the number of odd numbers in an array.
+    
+
+#include<stdio.h>
+
+int countOdd(int arr[], int n);
+
+int main () {
+
+    int arr[] = {1,2,3,4,5,6};
+    printf("%d", countOdd(arr, 6));
+
+    return 0;
+}
+
+int countOdd(int arr[], int n) {
+    int count = 0;
+    for(int i = 0; i < n; i++) {
+        if(arr[i] %2 != 0) {
+            count += 1;
+        }
+    }
+    return count;
+}
+
+
+
+
+// Chapter 07: Arrays
+    
+    //Multi-dimensional Arrays
+    // Practice Qs 43
+    // int arr[] = {1,2,3,4,5};
+    // For the given array, what will the following give?
+    // a. *(arr+2)
+    // b. *(arr+5)
+    
+
+#include<stdio.h>
+
+
+int main () {
+
+    int arr[] = {1,2,3,4,5};
+    printf("%d\n", *(arr+2)); //3
+    printf("%d\n", *(arr+5)); //4194432
+
+    return 0;
+}
+
+
+
+
+// Chapter 07: Arrays
+    
+    //Multi-dimensional Arrays
+
+    // Practice Qs 44
+    // Write a function to reverse an array.
+    
+
+#include<stdio.h>
+
+int reverse(int arr[], int n);
+void printArr(int arr[], int n);
+
+int main () {
+
+    int arr[] = {1,2,3,4,5};
+    
+    printArr(arr,5);
+    reverse(arr, 5);
+    printArr(arr,5);
+    
+    return 0;
+}
+
+void printArr(int arr[], int n) {
+    for(int i = 0; i < n; i++) {
+        printf("%d \t", arr[i]);
+    }
+    printf("\n");
+}
+
+//call by reference: change actual array values
+int reverse(int arr[], int n) {
+    for(int i = 0; i < n /2; i++) {
+        int firstVal = arr[i];
+        int secondVal = arr[n - i - 1];
+        arr[i] = secondVal;
+        arr[n - i - 1] = firstVal;
+    }
+}
+
+
+
+
+
+// Chapter 07: Arrays
+
+//     Practice Qs 45
+// Write a program to store the first n fibonacci numbers.
+    
+
+#include<stdio.h>
+
+
+int main () {
+
+   int n;
+   printf("enter n (n > 2): ");
+   scanf("%d", &n);
+
+   int fib[n];
+   fib[0] = 0;
+   fib[1] = 1;
+
+    printf("%d\t %d\t", fib[0], fib[1]);
+
+    for(int i = 2; i< n; i++) { //1, 2, 3, 5, 8, 13,
+        fib[i] = fib[i - 1] + fib[i - 2];
+        printf("%d \t", fib[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
+// Chapter 07: Arrays
+
+// Practice Qs 46
+// Create a 2D array, storing the tables of 2 & 3.
+    
+
+#include<stdio.h>
+
+
+void storeTables(int arr[][10], int n, int m, int number);
+
+int main () {
+
+    int tables[2][10];
+    storeTables(tables, 0, 10, 2);
+    storeTables(tables, 1, 10, 3);
+
+    for(int i=0; i<10; i++) {
+       printf("%d\t", tables[0][i]);
+    }
+    printf("\n");
+
+    for(int i=0; i<10; i++) {
+       printf("%d\t", tables[1][i]);
+    }
+
+    return 0;
+}
+
+//NOtE: must define second dimension of array if you pass 2d array 
+void storeTables(int arr[][10], int n, int m, int number) {
+    for(int i=0; i<m; i++) {
+        arr[n][i] = number * (i+1); //2, 4, 6, ...
+    }
+}
+
+
+
+// Chapter 07: Arrays
+
+// HOMEWORK SET
+// a. In an array of numbers, find how many times does
+// a number 'x' occurs.
+// b. Write a program to print the largest number in an
+// array.
+// c. Write a program to insert an element at the end of an array.
+
+#include<stdio.h>
+
+int main () {
+
+
+    return 0;
+}
