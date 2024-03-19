@@ -3181,3 +3181,339 @@ void doWork(int a, int b, int *sum, int *prod, int *avg) {
     // between two numbers using a pointer.
     // b. Write a program in C to print the elements of an array in reverse order.
     // c. Write a program in C to print all the letters in english alphabet using a pointer.
+
+
+
+
+
+    // Chapter 07: Arrays
+
+//Collection of similar data types stored at contiguous memory locations
+
+//syntax:
+    // dataType arrayName[sizeOfArray];
+    
+    // int marks[3]; //reverse 3 blocks in memory that are contiguous in memory location where each block reserves 4 bytes
+    // char name[10];
+    // float price[2];
+    
+    //array uses 0-based indexing means first element stored at 0 index, second element stored at 1 index, third element stored at 2 index
+    
+    // Input & Output
+        // scanf("%d", &marks[0])
+        // printf("%d", marks[0]);
+
+        
+
+#include<stdio.h>
+int main () {
+
+    int marks1 = 97;
+    int marks2 = 98;
+    int marks3 = 89;
+
+    int makrs[] = {97, 98, 89};
+
+    
+    return 0;
+}
+
+
+
+
+
+
+// Chapter 07: Arrays
+
+#include<stdio.h>
+int main () {
+
+    // int marks1 = 97;
+    // int marks2 = 98;
+    // int marks3 = 89;
+
+    int marks[3];
+    printf("Enter phy: ");
+    scanf("%d", &marks[0]);
+
+    printf("Enter chem: ");
+    scanf("%d", &marks[1]);
+    
+    printf("Enter matah: ");
+    scanf("%d", &marks[2]);
+    
+    printf("phy = %d, matah = %d, matah = %d ", marks[0], marks[1], marks[2]);
+    
+    return 0;
+}
+
+
+
+
+// Chapter 07: Arrays 
+
+//Array Declaration
+
+// Practice Qs 41
+// Write a program to enter price of 3 items & print their final cost with gst. (gst = itemcost*18%)
+
+
+#include<stdio.h>
+int main () {
+
+    float price[3];
+    printf("Enter 3 prices: ");
+    scanf("%f\n", &price[0]);
+    scanf("%f\n", &price[1]);
+    scanf("%f\n", &price[2]);
+        
+    printf("total price 1: %f\n", price[0] + (0.18*price[0]));
+    printf("total price 2: %f\n", price[1] + (0.18*price[1]));
+    printf("total price 3: %f\n", price[2] + (0.18*price[2]));
+    
+    return 0;
+}
+
+
+
+
+// Chapter 07: Arrays
+
+    //Inititalization of Array
+        // int marks[] = {97, 98, 89} //consume 12 bytes
+        //char marks[] = ['c', 'd', 'c'] //consume 3 bytes
+        // int marks[3] = {97, 98, 89} 
+
+#include<stdio.h>
+int main () {
+
+    float price[] = {100.0, 200.0, 300.0 };
+    
+    printf("total price 1: %f\n", price[0] + (0.18*price[0]));
+    printf("total price 2: %f\n", price[1] + (0.18*price[1]));
+    printf("total price 3: %f\n", price[2] + (0.18*price[2]));
+    
+
+    return 0;
+}
+
+
+
+
+// Chapter 07: Arrays
+
+//Pointer Arithmetic
+    //pointer can be increemented & decremented
+
+    //case 01: 
+    
+    // int age = 22;
+    // int *ptr = &age;
+    // ptr++; // ptr = ptr + 1 //means increase size (increase size in bytes depending upon type of data) //that means now, ptr points to another memory location
+    
+
+ 
+#include<stdio.h>
+int main () {
+
+    int age = 22;
+    int *ptr = &age;
+    printf("ptr = %u\n", ptr); //6422296
+    ptr++;
+    printf("ptr = %u\n", ptr); //6422300   
+    ptr--;
+    printf("ptr = %u\n", ptr); //6422296   
+    
+    return 0;
+}
+
+
+
+
+// Chapter 07: Arrays
+
+//Pointer Arithmetic
+    
+    //case 02:
+    // float price = 20.00;
+    // float *ptr = &price;
+    // ptr++;    
+ 
+#include<stdio.h>
+int main () {
+
+    float price = 100.00;
+    float *ptr = &price;
+    printf("ptr = %u\n", ptr); //6422296
+    ptr++;
+    printf("ptr = %u\n", ptr); //6422300   
+    ptr--;
+    printf("ptr = %u\n", ptr); //6422296   
+    
+    return 0;
+}
+
+
+
+
+// Chapter 07: Arrays
+
+//Pointer Arithmetic
+    
+    //case 03:
+    // char star = '*';
+    // char *ptr = &star;
+    // ptr++;
+ 
+#include<stdio.h>
+int main () {
+
+    
+    char star = '*';
+    char *ptr = &star;
+    printf("ptr = %u\n", ptr); //6422296
+    ptr++;
+    printf("ptr = %u\n", ptr); //6422300   
+    ptr--;
+    printf("ptr = %u\n", ptr); //6422296   
+    
+    return 0;
+}
+
+
+
+
+
+// Chapter 07: Arrays
+
+//Pointer Arithmetic
+    // - we can subtract one pointer from another
+
+
+    //we can also compare 2 pointers
+ 
+#include<stdio.h>
+int main () {
+
+    int age = 22;
+    int _age = 23;
+    int *ptr = &age;
+    int *_ptr = &_age;
+   
+    printf("%u, %u differnce: %u\n", ptr, _ptr, ptr - _ptr); //1 means 1 integer difference (4 bytes as of int)
+    _ptr = &age;
+    printf("comparison = %u\n", ptr == _ptr); //1 b/c both point to same address
+    
+    return 0;
+}
+
+
+
+// Chapter 07: Arrays
+
+//Pointer Arithmetic
+    // - we can subtract one pointer from another (return difference in data type size like 1 = 4 bytes for int, 1 = 1 byte for char etc. c)
+
+
+    //we can also compare 2 pointers (they need to be of same data type)
+ 
+#include<stdio.h>
+int main () {
+
+    int age = 22;
+    char _age = 'a';
+    int *ptr = &age;
+    int *_ptr = &_age;
+   
+    printf("%u, %u differnce: %u\n", ptr, _ptr, ptr - _ptr); //1 means 1 integer difference (4 bytes as of int)
+    
+    return 0;
+}
+
+
+
+// Chapter 07: Arrays
+    //Array is a Pointer means actually arrays are pointer
+
+    // int *ptr = &arr[0]; <==> int *ptr = arr;
+
+#include<stdio.h>
+int main () {
+
+    
+    return 0;
+}
+
+
+
+
+// Chapter 07: Arrays
+   
+   //Traverse an Array
+
+
+#include<stdio.h>
+int main () {
+
+    int aadhar[5];
+
+    //input values
+    int *ptr = &aadhar[0];
+    for(int i=0; i<5; i++) {
+        printf("%d index : ", i);
+        // scanf("%d", (ptr+i));
+        scanf("%d", &aadhar[i]);
+    }
+    
+    //output
+    for(int i=0; i<5; i++) {
+        // printf("%d index: %d\n", i, *(ptr+i));
+        printf("%d index: %d\n", i, aadhar[i]);
+    }
+    return 0;
+}
+
+
+
+// Chapter 07: Arrays
+    
+    //Arrays as Function Argument
+    
+    //Function Declaration
+        // void printNumbers (int arr[], int n)
+        //             OR
+        // void printNumbers (int *arr, int n)
+    
+    //Function Call
+        //printNumbers(arr, n);
+
+
+#include<stdio.h>
+
+void printNumbers(int *arr, int n);
+
+int main () {
+
+    int arr[ ] = {1,2,3,4,5,6};
+    printNumbers(arr, 6);
+
+    return 0;
+}
+
+//version 2
+void printNumbers(int *arr, int n) {
+    for(int i=0; i<n; i++) {
+        printf("%d \t", arr[i]); 
+    }
+    printf("\n");
+}
+
+//version 1
+// void printNumbers(int arr[], int n) {
+//     for(int i=0; i<n; i++) {
+//         printf("%d \t", arr[i]);
+//     }
+//     printf("\n");
+// }
+
+
