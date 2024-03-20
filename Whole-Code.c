@@ -3750,3 +3750,315 @@ int main () {
 
     return 0;
 }
+
+
+
+
+
+// Chapter 08: strings
+
+// Strings
+    // - A character array terminated by a '\O' (null character) 
+    // - null character denotes string termination
+    // - need to add \0 (null character) while declaring characters to show as string
+    // EXAMPLE
+    // char name[] = {'Z', 'E', 'E', 'S', 'H', 'A', 'N','\0'}; //basically => ZEESHAN due to \0
+    // char class[] = {'A', 'H', 'M', 'E', 'D', '\0'};
+
+//Initialising Strings
+    // strings must be written in double quotes
+    
+    // char name[] = {'Z', 'E', 'E', 'S', 'H', 'A', 'N','\0'};
+    // char name[] = "ZEESHAN";
+
+    // char class[] = {'A', 'H', 'M', 'E', 'D', '\0'};
+    // char class[] = "AHMED";
+
+#include<stdio.h>
+
+int main () {
+
+    // char name[] = {'Z', 'E', 'E', 'S', 'H', 'A', 'N','\0'};
+    char name[] = "ZEESHAN"; //c compiler automatically add \0
+
+    // char class[] = {'A', 'H', 'M', 'E', 'D', '\0'};
+    char class[] = "AHMED";
+
+    return 0;
+}
+
+
+
+// Chapter 08: strings
+
+// WHAT HAPPENDS in Memory when Store Strings?
+    // char name[] = {'Z', 'E', 'E', 'S', 'H', 'A', 'N','\0'};
+    //char name[] = "ZEESHAN"; //c compiler automatically add \0
+    
+    //Now, inside memory, a chunk of memory is allocated with name "name" and inside of that chunk, there are small chunks of memory, each storing single character, taking one byte each small chunk of memory and at the end it also store \0 in another small chunk. All these small chunks of memory are continously allocated in memory due to array as strings is colleciton of character array
+
+
+#include<stdio.h>
+
+int main () {
+
+
+    return 0;
+}
+
+
+
+
+// Chapter 08: strings
+
+//Practice Qs 47
+    // Create a String firstName & lastName to store details of user & print all the characters using a loop.
+
+#include<stdio.h>
+
+void printString(char arr[]);
+
+int main () {
+
+    char firstName[] = "Zeeshan";
+    char lastName[] = "Ahmed";
+
+    printString(firstName);
+    printString(lastName);
+
+    return 0;
+}
+
+void printString(char arr[]) {
+    for( int i = 0; arr[i] != '\0' ; i++) {
+        printf("%c", arr[i]);
+    }
+    printf("\n");
+}
+
+
+
+
+
+
+
+
+// Chapter 08: strings
+
+//String Format Specifier:
+    // we use "%s" for string 
+    
+    // don't use & becuase string is collection of character array and array is basically a pointer. So, don't need to use & before variable name
+
+    //Example:
+        //char name[] = "Zeeshan";
+        // scanf("%s", name); 
+        // printf("%s", name);
+
+#include<stdio.h>
+
+
+int main () {
+    char name[50];
+    printf("Enter name: ");
+    scanf("%s", name); //c compiler add \0 automatically when use %s 
+    printf("Your name is: %s", name);
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+// Chapter 08: strings
+
+// Practice Qs 48
+// Ask the user to enter their firstName & print it back to them.
+// Also try this with their fullName.
+
+
+#include<stdio.h>
+
+
+int main () {
+    char firstName[50];
+    printf("Enter firstName: ");
+    scanf("%s", firstName); 
+    printf("Your firstName is: %s", firstName);
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+// Chapter 08: strings
+
+// Practice Qs 48
+// Ask the user to enter their firstName & print it back to them.
+// Also try this with their fullName.
+
+// IMPORTANT
+// scanf( ) cannot input multi-word strings with spaces
+// Here,
+// gets( ) & puts( ) come into picture
+
+
+
+#include<stdio.h>
+
+int main () {
+    // char firstName[50];
+    // printf("Enter firstName: ");
+    // scanf("%s", firstName); 
+    // printf("Your firstName is: %s", firstName);
+
+    char fullName[100];
+    printf("Enter your full Name: ");
+    scanf("%s", fullName); //don't take word after space. So, need another tool for that i.e., gets() & put(). gets() is deprecated now, so use fgets() instead
+
+    printf("Your firstName is: %s", fullName);
+
+    return 0;
+}
+
+
+
+
+
+// Chapter 08: strings
+
+//String Functions:
+    
+    //put(str)
+        //output a string
+
+    //gets(str)
+        //input a string (even multi-word)
+        //dangerous as it don't track what is the maximum size of str and due this there are many chances the system to be hacked and outdated, so use fgets() instead 
+
+    //fgets(str, n, file)
+        //stops when n - 1 chars input or new line is entered
+        // n = size of string
+        // file  = file name but write "stdin -> will end string when hit enter ""
+
+#include<stdio.h>
+
+int main () {
+
+//    char str[100];
+//    gets(str);
+//    puts(str);
+
+   char str[100];
+   fgets(str, 100, stdin);
+   puts(str); //add \n t end of string
+
+
+
+    return 0;
+}
+
+
+
+
+// Chapter 08: strings
+
+// String using Pointers
+
+    //strings are also pointers like arrays
+
+    //can create strings using array notation or pointer notation
+
+    //ARRAY NOTATION:
+    //ARRAY NOTATION:
+
+    // char *str = "Hello World";
+  
+    // Store string in memory & the assigned address is stored in the char pointer 'str'
+
+    // char *str = "Hello World"; //can be reinitialized
+
+    // char str[] = "Hello World"; //cannot be reinitialized
+
+#include<stdio.h>
+
+int main () {
+
+    char *canChange = "Hello world";
+    puts(canChange);
+    canChange = "Hello";
+    puts(canChange);
+
+    char cannotChange[] = "Hello world";
+    puts(cannotChange);
+    // cannotChange = "Hello"; //error: expression must be a modifiable value; becuase array notation modifications are not allowed
+
+    return 0;
+}
+
+
+
+
+// Chapter 08: strings
+
+// Practice Qs 49
+// Make a program that inputs user's name & prints its length.
+
+#include<stdio.h>
+
+int countLength(char arr[]);
+
+int main () {
+
+    char name[100];
+    fgets(name, 100, stdin);
+    printf("length is : %d ", countLength(name));
+
+    return 0;
+}
+
+int countLength(char arr[]) {
+    int count = 0;
+    for(int i = 0; arr[i] != '\0'; i++) {
+        count++;
+    }
+
+    return count - 1;
+}
+
+
+
+
+
+
+// Chapter 08: strings
+
+// Standard Library Functions: 
+    // <math.h>
+    // <string.h>
+
+// strlen(str)
+    // count number of characters excluding \0 null character
+
+#include<stdio.h>
+#include<string.h>
+
+int main () {
+
+    char name[] = "Ahmed";
+    int length = strlen(name);
+    printf("Length is: %d", length);
+    
+    return 0;
+}
