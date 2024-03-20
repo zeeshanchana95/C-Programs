@@ -4062,3 +4062,249 @@ int main () {
     
     return 0;
 }
+
+
+
+// strcpy(newStr, oldStr)
+    //copies vlaues of old string to new string
+
+#include<stdio.h>
+#include<string.h>
+
+int main () {
+ 
+    char oldStr[] = "old string";
+    char newStr[] = "new string";
+    strcpy(newStr, oldStr); //old string
+    printf("%s", newStr);
+
+    return 0;
+}
+
+
+
+
+
+
+//3 strcat(firstStr, secStr)
+    //concatenates first string with second string
+    //concatenate other string values to first string
+    
+    
+    //concatenation means joing two strings, add no spacing between strings
+    
+    //we can also concatenate other string values into a single string but that string should have the capacity to hold other string values
+
+#include<stdio.h>
+#include<string.h>
+
+int main () {
+ 
+    char firstStr[100] = "Hello ";
+    char secString[] = "World!";
+    strcat(firstStr, secString); 
+    puts(firstStr); //Hello World!
+
+    return 0;
+}
+
+
+
+
+
+// Chapter 08: strings
+
+// Standard Library Functions: 
+    // <math.h>
+    // <string.h>
+
+//  strcpm(firstStr, secStr)
+        // Compares 2 strings & returns a value
+        
+        // O -> strings are equal
+        // positive -> means first > second (ASCII)
+        // negative -> means first < second (ASCII)
+
+    //use in places like dictionary where sort words in alphabetical order
+
+    
+#include<stdio.h>
+#include<string.h>
+
+int main () {
+ 
+    char firstStr[] = "HHH";
+    char secString[] = "HHH";
+    printf("%d\n", strcmp(firstStr, secString));
+    printf("%d\n", strcmp(secString, firstStr));
+
+    return 0;
+}
+
+
+
+// Chapter 08: strings
+
+//  Practice Qs 50
+// Take a string input from the user using %c.
+
+#include<stdio.h>
+#include<string.h>
+
+
+int main () {
+    
+    char str[100];
+    char ch;
+    int i = 0;
+
+    while(ch != '\n') {
+        scanf("%c", &ch);
+        str[i] = ch;
+        i++;
+    }
+    str[i] = '\0';
+    puts(str);
+ 
+    return 0;
+}
+
+
+
+
+
+// Chapter 08: strings
+    // Salting (technique of securing password where company add extra characters to your password in order to protect it.)
+
+//  Practice Qs 51
+    // Salting 
+    // Find the salted form of a password entered by user if the salt is "123" & added at the end.
+
+#include<stdio.h>
+#include<string.h>
+
+void salting(char password[]);
+
+int main () {
+    
+    char password[100];
+    scanf("%s", password);
+    salting(password);
+
+    return 0;
+}
+
+void salting (char password[]) {
+    char salt[] = "123";
+    char newPassword[200];
+
+    strcpy(newPassword, password); //newPassword = test
+    strcat(newPassword, salt); //newPassword = test123
+    puts(newPassword);
+}
+
+
+
+
+// Chapter 08: strings
+
+// Practice Qs 52
+    // Write a function named slice, which takes a string & returns a sliced string from index n to m.
+
+#include<stdio.h>
+#include<string.h>
+
+void slice(char str[], int n, int m);
+
+int main () {
+   
+   char str[] = "Helloworld!";
+   slice(str, 3, 6);
+    return 0;
+}
+
+
+void slice(char str[], int n, int m) {
+    //n and m are valid values
+
+    char newStr[100];
+    for(int i = n, j=0; i<=m; i++, j++) {
+        newStr[j] = str[i];
+    }
+    newStr[j] = '\0';
+    puts(newStr);
+}
+
+
+
+
+// Chapter 08: strings
+
+//Practice Qs 53
+    // Write a function to count the occurrence of vowels in a string.
+
+#include<stdio.h>
+#include<string.h>
+
+int countVowels(char str[]);
+
+int main () {
+   
+    char str[] = "Helloworld!";
+    printf("vowerls are %d", countVowels(str));
+    return 0;
+}
+
+
+int countVowels(char str[]) {
+    int count = 0;
+    for(int i = 0;  str[i] != '\0'; i++) {
+        if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+// Chapter 08: strings
+
+//Practice Qs 54
+// Check if a given character is present in a string or not.
+
+#include<stdio.h>
+#include<string.h>
+
+void checkChar(char str[], char ch);
+
+int main () {
+   
+    char str[] = "Hello world!";
+    char ch = 'w';
+    checkChar(str, ch);
+
+    return 0;
+}
+
+void checkChar(char str[], char ch) {
+    for(int i = 0;  str[i] != '\0'; i++) {
+        if(str[i] == ch) {
+            printf("character is present");
+            return;
+        }
+    }
+    printf("character is not present");
+}
+
+
+
+// HOMEWORK SET
+// a. Write a program to convert all lowercase vowels to
+// uppercase in a string.
+// b. Write a program to print the highest frequency
+// character in a string.
+// c. Write a program to remove blank spaces in a string.
+// d. Write a program to replace lowercase letters with
+// uppercase & vice versa in a string.
+
+
