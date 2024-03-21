@@ -4308,3 +4308,317 @@ void checkChar(char str[], char ch) {
 // uppercase & vice versa in a string.
 
 
+
+
+// Chapter 09: Structures
+
+    // - structures are a collection of values of different data types
+
+    // EXAMPLE
+        // For a student store the following :
+        // name (String)
+        // roll no (Integer)
+        // cgpa (Float):
+
+    // data types are of 2 types
+        //1.Inbuilt 
+            // already made or available like int, float, char etc.
+
+        //2. User-defined Data Types:
+            // made by user like struct etc
+
+
+    // Syntax:
+        // declaration 
+            // struct student {
+            //     char name[100];
+            //     int roll;
+            //     float cgpa;
+            // };
+
+        // using
+            // struct student s1;
+            // s1.cgpa = 7.5
+
+
+#include<stdio.h>
+#include<string.h>
+
+// define struct
+struct student {
+    int roll;
+    float cgpa;
+    char name[100];
+};
+
+int main () {
+   
+   //declare struct
+   struct student s1;
+
+   //access properties of struct
+   s1.roll = 1664;
+   s1.cgpa = 9.2;
+//    s.name = "zeeshan"; //error due to array notation
+    strcpy(s1.name, "zeeshan");
+    printf("student name = %s\n", s1.name);
+    printf("student roll = %d\n", s1.roll);
+    printf("student cgpa = %f\n", s1.cgpa);
+
+    return 0;
+}
+
+
+
+// Chapter 09: Structures
+
+    // Structures in Memory:
+        //structures take contiguous memory locations
+
+
+
+// Chapter 09: Structures
+
+     // Practice Qs 55
+    // Write a program to store the data of 3 students.
+
+#include<stdio.h>
+#include<string.h>
+
+// define struct
+struct student {
+    int roll;
+    float cgpa;
+    char name[100];
+};
+
+int main () {
+   
+    struct student s1;
+
+    s1.roll = 1664;
+    s1.cgpa = 9.2;
+    strcpy(s1.name, "zeeshan");
+    printf("student name = %s\n", s1.name);
+    printf("student roll = %d\n", s1.roll);
+    printf("student cgpa = %f\n", s1.cgpa);
+    printf("\n");
+    
+    struct student s2;
+
+    s2.roll = 1660;
+    s2.cgpa = 8.7;
+    strcpy(s2.name, "ahmed");
+    printf("student name = %s\n", s2.name);
+    printf("student roll = %d\n", s2.roll);
+    printf("student cgpa = %f\n", s2.cgpa);
+    printf("\n");
+    
+    
+    struct student s3;
+
+    s3.roll = 1662;
+    s3.cgpa = 7.5;
+    strcpy(s3.name, "channa");
+    printf("student name = %s\n", s3.name);
+    printf("student roll = %d\n", s3.roll);
+    printf("student cgpa = %f\n", s3.cgpa);
+    printf("\n");
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+// Chapter 09: Structures
+
+     // Benefits of Structs:
+        // 1. saves us from creating too many variables
+        // 2. good data management and organization 
+
+
+
+
+// Chapter 09: Structures
+
+    // Array of Structures
+        // struct student ECE[IOO];
+        // struct student COE[100];
+        // struct student IT[100];
+
+    // ACCESS
+        // IT[0].roll = 200;
+        // IT[0].cgpa = 7.6;
+
+
+#include<stdio.h>
+
+struct student {
+    int roll;
+    float cgpa;
+    char name[100];
+};
+
+int main () {
+    
+    struct student ece[100];
+    ece[0].roll = 1664;
+    ece[0].cgpa = 9.2;
+    strcpy(ece[0].name, "shradha");
+
+    printf("name = %s\n", ece[0].name);
+    printf("roll = %s\n", ece[0].roll);
+    printf("cgpa = %s\n", ece[0].cgpa);
+
+    return 0;
+}
+
+
+
+
+
+
+
+// Chapter 09: Structures
+
+    // Initializing Structures
+        // struct student s1 = { "shradha", 1664, 7.9};
+        // struct student s2 = {"rajat", 1552, 8.3};
+        // struct student s3 = {0}; //means all three values are null
+
+
+#include<stdio.h>
+
+struct student {
+    int roll;
+    float cgpa;
+    char name[100];
+};
+
+int main () {
+    //we should provide values in the same order as the properties defined in the struct
+    
+    struct student s1 = {1664, 9.2, "zeeshan"};
+    printf("student roll: %d\n", s1.roll);
+
+    return 0;
+}
+
+
+
+
+
+
+// Chapter 09: Structures
+
+    // Pointers to Structures
+        // struct student sl ;
+        // struct student *ptr;
+        // ptr = &s1;
+
+
+#include<stdio.h>
+
+struct student {
+    int roll;
+    float cgpa;
+    char name[100];
+};
+
+int main () {
+
+    struct student s1 = {1664, 9.2, "zeeshan"};
+    printf("student roll: %d\n", s1.roll);
+
+    struct student *ptr = &s1;
+    printf("student roll = %d\n", (*ptr).roll);
+
+    return 0;
+}
+
+
+
+
+
+
+// Chapter 09: Structures
+
+    //Arrow Operator
+        // (*ptr).code <---> ptr->code
+
+#include<stdio.h>
+
+struct student {
+    int roll;
+    float cgpa;
+    char name[100];
+};
+
+int main () {
+
+    struct student s1 = {1664, 9.2, "zeeshan"};
+    printf("student roll: %d\n", s1.roll);
+
+    struct student *ptr = &s1;
+    printf("student roll = %d\n", (*ptr).roll);
+    
+    printf("\n");
+    printf("student roll = %d\n", ptr->roll);
+    printf("student name = %s\n", ptr->name);
+    printf("student cgpa = %f\n", ptr->cgpa);
+
+    return 0;
+}
+
+
+
+
+
+
+// Chapter 09: Structures
+
+    //Passing structure to function
+
+    //Function Prototype
+    void printlnfo(struct student sl);
+
+#include<stdio.h>
+
+struct student {
+    int roll;
+    float cgpa;
+    char name[100];
+};
+
+//need to use struct after declaration
+void printfInfo(struct student s1);
+
+int main () {
+
+    struct student s1 = {1664, 9.2, "zeeshan"};
+
+    printfInfo(s1); //structs are call by value
+    printf("student.roll = %d\n", s1.roll); //1664
+
+    return 0;
+}
+
+void printfInfo(struct student s1) {
+    printf("student information: \n");
+    printf("student.roll = %d\n", s1.roll);
+    printf("student.name = %s\n", s1.name);
+    printf("student.cgpa = %f\n", s1.cgpa);
+
+    s1.roll = 1660;
+
+}
+
+
+
