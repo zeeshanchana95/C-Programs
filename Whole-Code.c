@@ -4758,7 +4758,146 @@ void printAddress(struct address add) {
 
 
 
+// Chapter 09: Structures
+
+    // Practice Qs 57
+        // Create a structure to store vectors. Then make a function to return sum of 2 vectors.
+
+
+#include<stdio.h>
+#include<string.h>
+
+struct vector {
+    int x;
+    int y;
+};
+
+void calcSum(struct vector v1, struct vector v2, struct vector sum);
+
+int main () {
+
+   struct vector v1 = { 5, 10};
+   struct vector v2 = {3, 7};
+   struct vector sum;
+   
+   calcSum(v1, v2, sum);
+
+    return 0;
+}
+
+void calcSum(struct vector v1, struct vector v2, struct vector sum) {
+    sum.x = v1.x + v2.x;
+    sum.y = v1.y + v2.y;
+
+    printf("Sum of x is: %d\n", sum.x);
+    printf("Sum of y is: %d\n", sum.y);
+}
 
 
 
+
+
+
+
+
+
+// Chapter 09: Structures
+
+    // Practice Qs 58
+        // Create a structure to store complex numbers.(use arrow operator)
+
+
+#include<stdio.h>
+#include<string.h>
+
+struct complex {
+    int real;
+    int img;
+};
+
+void calcSum(struct vector v1, struct vector v2, struct vector sum);
+
+int main () {
+
+    struct complex number1 = {5,8};
+    struct complex *ptr = &number;
+    printf("real part = %d\n", ptr -> real);
+    printf("imaginary part = %d\n", ptr -> img);
+
+    return 0;
+}
+
+
+
+
+
+
+
+// Chapter 09: Structures
+
+    //Practice Qs 59
+    // You have to store the marks of 30 students in class.
+    // What will you use?
+        // a. array of 10 floats
+        // b. structure
+
+    //So, use arrays here because data is of same types and mostly structures are used where there are different data types involved in data.
+
+
+
+
+
+
+
+
+// Chapter 09: Structures
+
+    //Practice Qs 60
+        // Make a structure to store Bank Account Information of a customer of ABC Bank. Also, make an alias for it.
+
+#include<stdio.h>
+#include<string.h>
+
+typedef struct BankAccount {
+    int accountNo;
+    char name[100];
+} acc;
+
+int main () {
+
+    acc acc1 = {123, "zeehsan"};
+    acc acc2 = {124, "ahmed"};
+    acc acc3 = {125, "channa"};
+
+    printf("Account No: %d\n", acc1.accountNo);
+    printf("Account Name: %s\n", acc1.name);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+// Chapter 09: Structures
+
+    //HOMEWORK SET
+        // Make a system that can store information of all students, teachers & staff of your college in the form of structures.
+
+        // You can also make this into a C Project with other functionalities like cgpa calculation of students, storing attendance etc.
+
+#include<stdio.h>
+#include<string.h>
+
+int main () {
+
+   
+
+    return 0;
+}
 
