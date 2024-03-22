@@ -5458,3 +5458,417 @@ int main () {
 
 
 
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    //Memory Allocation:
+        //there are two ways to allocate memory
+            //1. static memory allocation
+            //2. dynamic memory allocation
+
+    // 1. static memory allocation (compile time)
+        //  It is a way to allocate memory to a data structure during the compile time or while variable declaration 
+
+    // 2. dynamic memory allocation (run time):
+        // It is a way to allocate memory to a data structure during the runtime.
+
+        // We need some functions to allocate & free memory dynamically.
+
+
+
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    // Functions for DMA
+    //     a. malloc( ) -> used to allocate particular amount of memory like if you need 14 or 30 bytes of memory, it will provide you that.
+
+    //     b. calloc( ) ->  
+
+    //     c. free( )
+
+    //     d. realloc( )
+
+    // malloc( )
+        // memory allocation
+        // takes number of bytes to be allocated
+        // & returns a pointer of type void
+        
+        // ptr = (*int) malloc(5 * sizeof(int));
+
+#include<stdio.h>
+
+int main () {
+
+    printf("%d\n", sizeof(int)); //4
+    printf("%d\n", sizeof(float)); //4
+    printf("%d\n", sizeof(char)); //1
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    // Functions for DMA
+    //     a. malloc( ) -> used to allocate particular amount of memory like if you need 14 or 30 bytes of memory, it will provide you that.
+
+    //     b. calloc( ) ->  
+
+    //     c. free( )
+
+    //     d. realloc( )
+
+    // malloc( )
+        // memory allocation
+        // takes number of bytes to be allocated
+        // & returns a pointer of type void
+        
+        // ptr = (*int) malloc(5 * sizeof(int));
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main () {
+    int *ptr;
+
+    //get memory duirng runtime
+    ptr = (int *) malloc(5 * sizeof(int)); //return NULL if system can't provide demanded memory
+
+    //store values
+    ptr[0] = 1;
+    ptr[1] = 3;
+    ptr[2] = 5;
+    ptr[3] = 7;
+    ptr[4] = 9;
+
+    //output stored values
+    for(int i = 0; i < 5; i++) {
+        printf("%d\n", ptr[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    // Practice Qs 65
+    //     WAP to allocate memory to store 5 prices.
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main () {
+    float *ptr;
+    ptr = (float *) malloc(sizeof(float));
+
+    ptr[0] = 1;
+    ptr[1] = 3;
+    ptr[2] = 5;
+    ptr[3] = 7;
+    ptr[4] = 9;
+
+    for(int i = 0; i < 5; i++) {
+        printf("%f\n", ptr[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    //    calloc( )
+            // means continuous allocation; allocates memory in contiguous fashion
+
+            // each slot initializes with 0 for integer, 0.00 for float, 
+
+            // ptr = (*int) calloc(5, sizeof(int)); WAP to allocate memory to store 5 prices.
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main () {
+    float *ptr;
+    ptr = (float *) calloc(5, sizeof(float));
+
+    for(int i = 0; i < 5; i++) {
+        printf("%f\n", ptr[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    //    calloc( )
+    // Practice Qs 66
+        // Write a Program (WAP) to allocate memory of size n, where n is entered by the user.
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main () {
+    int *ptr;
+    int n;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    ptr = (int *) calloc(n, sizeof(int));
+
+    for(int i = 0; i < n; i++) {
+        printf("%d\n", ptr[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    //  free( )
+        // We use it to free memory that is allocated using malloc & calloc
+        
+        // free(ptr);
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main () {
+    int *ptr;
+    int n;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    ptr = (int *) calloc(n, sizeof(int));
+    for(int i = 0; i < n; i++) {
+        printf("%d\n", ptr[i]);
+    }
+
+    free(ptr); // freeing up memory
+
+
+    ptr = (int *) calloc(2, sizeof(int));
+    for(int i = 0; i < 2; i++) {
+        printf("%d\n", ptr[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    //  free( )
+    
+    // Practice Qs 67
+        // In Qs 65, free the memory allocated with calloc
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main () {
+    int *ptr;
+    int n;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    ptr = (int *) calloc(n, sizeof(int));
+    for(int i = 0; i < n; i++) {
+        printf("%d\n", ptr[i]);
+    }
+
+    free(ptr); // freeing up memory
+
+
+    ptr = (int *) calloc(2, sizeof(int));
+    for(int i = 0; i < 2; i++) {
+        printf("%d\n", ptr[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    //  Practice Qs 68
+        // Allocate memory for 5 numbers. Then dynamically increase it to 8 numbers.
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main () {
+    int *ptr;
+    ptr = (int *) calloc(5, sizeof(int));
+
+    printf("Enter numbers(5): ");
+    for(int i = 0; i < 5; i++){
+        scanf("%d", &ptr[i]);
+    }
+
+    ptr = realloc(ptr, 8);
+    printf("Enter numbers(8): ");
+    for(int i = 0; i < 8; i++) {
+        scanf("%d\n", &ptr[i]);
+    }
+
+    //print
+    for(int i = 0; i < 8; i++) {
+        printf("number %d is %d\n", i, ptr[i]);
+    }
+
+
+    return 0;
+}
+
+
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    //  Practice Qs 69
+        // Create an array of size 5(using calloc) & enter its values from the user.
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main () {
+    int *ptr;
+    ptr = (int *) calloc(5, sizeof(int));
+
+    printf("Enter numbers(5): ");
+    for(int i = 0; i < 5; i++){
+        scanf("%d", &ptr[i]);
+    }
+
+    //print
+    for(int i = 0; i < 5; i++) {
+        printf("number %d is %d\n", i, ptr[i]);
+    }
+
+
+    return 0;
+}
+
+
+
+
+
+
+// Chapter 11: Dynamic Memory Allocation
+ 
+    // Practice Qs 70
+        // Allocate memory to store first 5 odd numbers, then reallocate it to store first 6 even number.
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main () {
+    int *ptr;
+    ptr = (int *) calloc(5, sizeof(int));
+
+    ptr[0] = 1;
+    ptr[1] = 3;
+    ptr[2] = 5;
+    ptr[3] = 7;
+    ptr[4] = 9;
+
+    //print
+    for(int i = 0; i < 5; i++) {
+        printf("number %d\n", ptr[i]);
+    }
+
+    ptr = realloc(ptr, 6);
+    ptr[0] = 2;
+    ptr[1] = 4;
+    ptr[2] = 6;
+    ptr[3] = 8;
+    ptr[4] = 10;
+    ptr[5] = 12;
+    for(int i = 0; i < 6; i++) {
+        printf("number %d\n", ptr[i]);
+    }
+
+    free(ptr);
+
+
+    return 0;
+}
+
+
+// HOMEWORK SET
+// a. Write a program to calculate perimeter of rectangle.
+// Take sides, a & b, from the user.
+// b. Take a number(n) from user & output its cube(n*n*n).
+// c. Write comments for programs a & b.
+
+//END OF COURSE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

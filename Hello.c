@@ -1,26 +1,38 @@
-// Chapter 10: File Input and Output:
-    //Practice Qs 64
-        // 2 numbers - a & b, are written in a file. Write a program to replace them with their sum.
-    
+// Chapter 11: Dynamic Memory Allocation
+ 
+    // Practice Qs 70
+        // Allocate memory to store first 5 odd numbers, then reallocate it to store first 6 even number.
+
 #include<stdio.h>
+#include <stdlib.h>
 
 int main () {
+    int *ptr;
+    ptr = (int *) calloc(5, sizeof(int));
 
-    FILE *fptr;
-    fptr = fopen("sum.txt", "r");
+    ptr[0] = 1;
+    ptr[1] = 3;
+    ptr[2] = 5;
+    ptr[3] = 7;
+    ptr[4] = 9;
 
-    //reading two numbers from file
-    int a;
-    fscanf(fptr, "%d", &a);
-    int b;
-    fscanf(fptr, "%d", &b);
-    fclose(fptr);
+    //print
+    for(int i = 0; i < 5; i++) {
+        printf("number %d\n", ptr[i]);
+    }
 
-    //writing sum of two numbers to orignal file
-    fptr = fopen("sum.txt", "w");
-    fprintf(fptr, "%d", a+b);
-    fclose(fptr);
+    ptr = realloc(ptr, 6);
+    ptr[0] = 2;
+    ptr[1] = 4;
+    ptr[2] = 6;
+    ptr[3] = 8;
+    ptr[4] = 10;
+    ptr[5] = 12;
+    for(int i = 0; i < 6; i++) {
+        printf("number %d\n", ptr[i]);
+    }
 
+    free(ptr);
 
 
     return 0;
@@ -28,11 +40,3 @@ int main () {
 
 
 
-
-// HOMEWORK SET:
-// a. Write a program to read a string from a file &
-// output to the user.
-// a. Replace the data in file of Q(a) with the number of
-// vowels in the string.
-// c. Format the information of 5 students (name,
-// marks, cgpa, course) in a table like structure in a file.
