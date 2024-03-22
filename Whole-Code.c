@@ -4901,3 +4901,560 @@ int main () {
     return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+
+    // File IO
+        // FILE - container in a storage device to store data
+        // - RAM is volatile
+        // - Contents are lost when program terminates
+        // - Files are used to persist the data
+
+    // Operation on Files
+        // Create a File
+        // Open a File
+        // Close a File
+        // Read from a File
+        // Write in a File
+
+    // Types of Files
+        // Text Files
+            // for storing textual data
+            // .txt, .c
+        
+        // Binary Files
+            // for storing binary data
+            // .exe, .mp3, .jpg
+
+    
+
+
+
+  // How to access files: 
+        // File Pointer
+            // FILE is a (hidden)structure that needs to be created for opening a file a file
+            
+            // A FILE ptr that points to this structure & is used to access the file.
+                // FILE *fptr;
+
+        // Opening a File
+        //     FILE *fptr;
+        //     fptr = fopen("filename", mode);
+        
+        // Closing a File
+        //     fclose(fptr);
+
+
+    // File Opening Modes:
+        // - "r" = open to Read 
+        // - "rb" = open to read in binary
+        // - "w" = open to Write
+        // - "wb" = open to Write in binary
+        // - "a" = open to append
+
+        //NOTE: 
+            // -  if file to open doesn't exits, then in "r" or "rb" modes it will store "null"
+
+            // - "w" and "wb" modes will create new file if the file to be written doesn't exist otherwise it will remove orignal contents with new one.
+            
+            // - "a" will keep orignal contents with new contents. 
+
+    // BEST Practice
+        // Check if a file exists before reading from it.
+        
+
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("NewTest.txt", "r");
+    if(fptr == NULL) {
+        printf("File doesn't exist");
+    } else {
+        fclose(fptr);
+    }
+
+
+    return 0;
+}
+
+
+
+
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("NewTest.txt", "w");
+    if(fptr == NULL) {
+        printf("File created successfully");
+    } else {
+        printf("File opened successfully");
+    }
+    fclose(fptr);
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //File Operations:
+
+    //Reading from a file
+        // char ch;
+        // fscanf(fptr, "%c", &ch);
+
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("test.txt", "r");
+    
+    char ch;
+    fscanf(fptr, "%c", &ch); //return first letter from file and store it into "ch" variable
+    printf("Character = %c\n", ch); //Character = A
+    
+    fscanf(fptr, "%c", &ch);
+    printf("Character = %c\n", ch); //Character = p
+
+    fscanf(fptr, "%c", &ch);
+    printf("Character = %c\n", ch);//Character = p
+
+    fscanf(fptr, "%c", &ch);
+    printf("Character = %c\n", ch); //Character = l
+
+    fscanf(fptr, "%c", &ch);
+    printf("Character = %c\n", ch); //Character = e
+
+    fclose(fptr);
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //File Operations:
+
+    //Reading from a file
+        // int ch;
+        // fscanf(fptr, "%c", &ch);
+
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("test.txt", "r");
+    
+    int ch;
+    fscanf(fptr, "%d", &ch); //return first letter from file and store it into "ch" variable
+    printf("Character = %d\n", ch); //Character = 123
+    
+    fscanf(fptr, "%d", &ch);
+    printf("Character = %d\n", ch); //Character = 456
+
+    fscanf(fptr, "%d", &ch);
+    printf("Character = %d\n", ch);//Character = 7899
+
+    fclose(fptr);
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //File Operations:
+
+    //Writing to a file with Appending
+        // char ch = 'A';
+        // fprintf(fptr, "%c", ch);
+
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("test.txt", "a");
+    
+    fprintf(fptr, "%c", 'M'); //must write in 'single quotes' for single character    fprintf(fptr, "%c", 'a');
+    fprintf(fptr, "%c", 'n');
+    fprintf(fptr, "%c", 'g');
+    fprintf(fptr, "%c", 'o');
+    fclose(fptr);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //File Operations:
+
+    // Read & Write a char:
+        //fgetc(fptr);      //for reading single character from file
+        
+        //fputc('A', fptr); //for writing single character to file
+
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("test.txt", "r");
+    printf("%c\n", fgetc(fptr));
+    printf("%c\n", fgetc(fptr));
+    printf("%c\n", fgetc(fptr));
+    printf("%c\n", fgetc(fptr));
+    printf("%c\n", fgetc(fptr));
+
+
+    fclose(fptr);
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //File Operations:
+
+    // Read & Write a char:
+        //fgetc(fptr);      //for reading single character from file
+        
+        //fputc('A', fptr); //for writing single character to file
+
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("test.txt", "w");
+    fputc('M', fptr); 
+    fputc('A', fptr); 
+    fputc('N', fptr); 
+    fputc('G', fptr); 
+    fputc('O', fptr); 
+
+    fclose(fptr);
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //File Operations:
+
+    // Read & Write a char:
+        //fgetc(fptr);      //for reading single character from file
+        
+        //fputc('A', fptr); //for writing single character to file
+
+     // EOF (End Of File)
+        // fgetc returns EOF to show that the file has ended
+
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("test.txt", "r");
+
+    char ch;
+    ch = fgetc(fptr); //read first character
+    while(ch != EOF) {
+        printf("%c", ch);
+        ch = fgetc(fptr);
+    }
+    printf("\n");
+
+    fclose(fptr);
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //Practice Qs 61
+        // Make a program to read 5 integers from a file.
+
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("test.txt", "r");
+
+    int n;
+    fscanf(fptr, "%d", &n);
+    printf("number = %d\n", n);
+
+    fscanf(fptr, "%d", &n);
+    printf("number = %d\n", n);
+
+    fscanf(fptr, "%d", &n);
+    printf("number = %d\n", n);
+
+    fscanf(fptr, "%d", &n);
+    printf("number = %d\n", n);
+
+    fscanf(fptr, "%d", &n);
+    printf("number = %d\n", n);
+
+    fclose(fptr);
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //Practice Qs 62
+        // Make a program to input student information from a user & enter it to a file.
+
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("student.txt", "w");
+
+    char name[100];
+    int age;
+    float cgpa;
+
+    printf("Enter name: ");
+    scanf("%s", &name);
+
+    printf("Enter age: ");
+    scanf("%d", &age);
+
+    printf("Enter cgpa: ");
+    scanf("%f", &cgpa);
+
+
+    fprintf(fptr, "%s\t", name);
+    fprintf(fptr, "%d\t", age);
+    fprintf(fptr, "%f\t", cgpa);
+
+    fclose(fptr);
+
+
+    return 0;
+}
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //Practice Qs 62
+        // Make a program to input student information from a user & enter it to a file.
+
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("student.txt", "w");
+
+    char name[100];
+    int age;
+    float cgpa;
+
+    printf("Enter name: ");
+    scanf("%s", &name);
+
+    printf("Enter age: ");
+    scanf("%d", &age);
+
+    printf("Enter cgpa: ");
+    scanf("%f", &cgpa);
+
+
+    fprintf(fptr, "student name : %s\n", name);
+    fprintf(fptr, "student age  : %d\n", age);
+    fprintf(fptr, "student cgpa : %f\n", cgpa);
+
+    fclose(fptr);
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //Practice Qs 63
+        // Write a program to write all the odd numbers from 1 to n in a file.
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("odd.txt", "w");
+
+    int n;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for(int i = 0; i < n; i++) {
+        if(i%2 != 0) {
+            fprintf(fptr, "%d\n", i);
+        }
+    }
+    fclose(fptr);
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+// Chapter 10: File Input and Output:
+    //Practice Qs 64
+        // 2 numbers - a & b, are written in a file. Write a program to replace them with their sum.
+    
+#include<stdio.h>
+
+int main () {
+
+    FILE *fptr;
+    fptr = fopen("sum.txt", "r");
+
+    //reading two numbers from file
+    int a;
+    fscanf(fptr, "%d", &a);
+    int b;
+    fscanf(fptr, "%d", &b);
+    fclose(fptr);
+
+    //writing sum of two numbers to orignal file
+    fptr = fopen("sum.txt", "w");
+    fprintf(fptr, "%d", a+b);
+    fclose(fptr);
+
+
+
+    return 0;
+}
+
+
+
+
+// HOMEWORK SET:
+// a. Write a program to read a string from a file &
+// output to the user.
+// a. Replace the data in file of Q(a) with the number of
+// vowels in the string.
+// c. Format the information of 5 students (name,
+// marks, cgpa, course) in a table like structure in a file.
+
+
+
+
+
+
+
