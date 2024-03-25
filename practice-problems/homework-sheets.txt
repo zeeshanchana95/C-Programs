@@ -1,0 +1,10 @@
+HOMEWORK SET - 1:
+a. Write a program to calculate perimeter of rectangle. Take sides, a & b, from the user.
+b. Take a number(n) from user & output its cube(n*n*n).
+c. Write comments for programs a & b.
+
+
+HOMEWORK SET
+a. Write a program to print the average of 3 numbers.
+b. Write a program to check if given character is digit or not.
+c. Write a program to print the smallest number of two.
